@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    <div class="top">
+        <div class="first tilt" id="first_m"></div>
+        <img src="photos/logo.png" alt="" class="logo" id="logo_m">
+        <div class="second  tilt" id="second_m"></div>
+    </div>
+    <div class="main" id="main">
+        <div class="clip" id="social"></div>
+    </div>
+    <!-- <div class="container">
+    <div class="card">
+        <div class="content">
+            <h2>03</h2>
+            <h3>card three</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quasi quam perspiciatis architecto suscipit dolore hic sed officiis laboriosam ea.</p>
+            <a href="#">Read More</a>
+        </div>
+    </div>
+</div> -->
+<script src="js/vanilla-tilt.js"></script>
+<script>
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+            max: 10,
+            speed: 400,
+            glare:true,
+            "max-glare":0.6
+        });
+</script>
+</body>
+</html>

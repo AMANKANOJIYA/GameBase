@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("../photos/cyberpunk-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: hidden;
+}
+.closer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+.cross{
+    height: auto;
+    max-width: 29%;
+    position: absolute;
+    overflow: hidden;
+}
+#c2{
+    padding-top: 14%;
+    bottom: -30px;
+    right: -30px;
+    overflow: hidden;
+    animation-delay: 0.5s;
+    animation: cross2 2s;
+}
+#c1{
+    padding-bottom: 10%;
+    top:-30px;
+    left:-30px;
+    overflow: hidden;
+    animation-delay: 0.5s;
+    animation: cross1 2s;
+}
+.auth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height:400px ;
+    width: 600px;
+    background: linear-gradient(
+45deg
+, #000000a6, #0000004f);
+/* box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    border-top:1px solid rgba(255,255,255,0.5);
+    border-left:1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(2.5px); */
+    animation-delay: 1s;
+    animation: fadeout 1.5s;
+}
+.form{
+    height: 150px;
+    width: 570px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.auth_title{
+    text-transform: uppercase;
+    font-size: 45px;
+    color: white;
+    font-weight: 700;
+    font-family: system-ui;
+}
+.input{
+    width: 80%;
+    height: 40px;
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+    padding-left: 20px;
+    border-radius: 8px;
+    border: 2px white solid;
+    background: transparent;
+    font-family: system-ui;
+}
+.input:focus{
+    background-color: white;
+    color: black;
+}
+::placeholder{
+    color:white;
+}
+.button_auth{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    height: 51px;
+    width: 65%;
+    align-items: center;
+    justify-content: space-between;
+}
+.button_auth div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+.button{
+    text-decoration: none;
+    display: flex;
+    color: white;
+    background-color: #FE8B04;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 130px;
+}
+.button_auth div input{
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: 2px solid white ;
+    border-radius: 2px;
+    height: 15px;
+    width:15px;
+    outline: none;
+    z-index: 1;
+}
+.button_auth div input:checked{
+    border: 2px solid white ;
+    border-radius: 2px;
+    height: 15px;
+    width:15px;
+    outline: none;
+}
+.button_auth div input:checked + p::before{
+    content: "\2713";
+    display: block;
+    font-weight: 700;
+    text-align: center;
+    color: #FE8B04;
+    position: absolute;
+    left: 20.7rem;
+    top: 18.3em;
+    z-index: -1;
+}
+.button_auth div p{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    margin-left: 15px;
+}
+/* animation  */
+@keyframes fadeout{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes cross1{
+    0%{
+        opacity: 0;
+        top: 59px;
+        left: 172px;
+    }
+    100%{
+        opacity:1;
+        top:-30px;
+        left:-30px;
+    }
+}
+@keyframes cross2{
+    0%{
+        opacity: 0;
+        bottom: 74px;
+        right: 213px;
+    }
+    100%{
+        opacity:1;
+        bottom: -30px;
+        right: -30px;
+    }
+}
+@media only screen and (max-width:1490px){
+    .cross{
+        max-width: 35%;
+    }
+    #c2{
+        padding-top: 14%;
+        bottom: -30px;
+        right: -30px;
+    }
+    #c1{
+        padding-bottom: 10%;
+        top:-30px;
+        left:-30px;
+    }
+}
+@media only screen and (max-width:1200px){
+    .cross{
+        max-width: 35%;
+    }
+    #c2{
+        padding-top: 14%;
+        bottom: -30px;
+        right: -30px;
+    }
+    #c1{
+        padding-bottom: 10%;
+        top:-30px;
+        left:-30px;
+    }
+}
+@media only screen and (max-width:900px){
+    .cross{
+        max-width: 45%;
+    }
+    #c2{
+        padding-top: 14%;
+        bottom: -30px;
+        right: -30px;
+    }
+    #c1{
+        padding-bottom: 10%;
+        top:-30px;
+        left:-30px;
+    }
+}
