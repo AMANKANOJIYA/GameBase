@@ -66,11 +66,11 @@ body{
     height: 800px;
     width: 100%;
     background-image: url("../photos/ps4-games-page-banner-hero-desktop-01-en-11nov20.jpeg");
-    background: linear-gradient(to bottom, transparent,transparent,rgba(0, 0, 0, 0.87) ),
+    background: linear-gradient(to bottom, transparent,#0B111F ),
       url("../photos/ps4-games-page-banner-hero-desktop-01-en-11nov20.jpeg");
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     z-index: -1;
 }
 .clip{

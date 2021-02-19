@@ -27,6 +27,7 @@
         </div>
     </div>
 </div> -->
+<div id="logout_on" style="height: 100px; color: white; cursor: pointer;" onclick="logout_l()">LOG OUT </div>
 <footer class="footer" id="main_footer">
     <div id="sec-1" class="sec">
             <a href="index.html"><img src="photos/logo.png" alt=""><h2>Gamealine</h2></a>
@@ -85,4 +86,33 @@ Copyright © 2021 All rights reserved | This template is made with <a href="#" t
         });
 </script>
 </body>
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBAxH0iNVGmQTxx0loEDchJEwrYi11geFY",
+    authDomain: "game-base-4203.firebaseapp.com",
+    projectId: "game-base-4203",
+    storageBucket: "game-base-4203.appspot.com",
+    messagingSenderId: "614367861461",
+    appId: "1:614367861461:web:1bf7c81c661a8632ffa05c",
+    measurementId: "G-FQ3C0PPKPQ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="js/main.js"></script>
 </html>

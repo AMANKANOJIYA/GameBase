@@ -12,13 +12,13 @@
     <img src="photos/asset 5.png" class="cross" id="c2" alt="">
     </div>
     <div class="auth" id="login">
-        <h2 class="auth_title" id="title_auth_l">Authoroisation <br>  of your<span style="color:#FE8B04 ;"> account</span></h2>
+        <h2 class="auth_title" id="title_auth_l">Authoroisation <br>of your<span style="color:#FE8B04 ;"> account</span></h2>
         <form action="" method="post" class="form" id="login_form">
-            <input type="email" id="email" placeholder="Email" class="input">
-            <input type="password" id="email" placeholder="Password" class="input">
+            <input type="email" id="email" name="email_login" placeholder="Email" class="input">
+            <input type="password" id="password" name="password_login" placeholder="Password" autocomplete="off" class="input">
         </form>
         <div class="button_auth">
-            <a href="" class="button" id="login">Login</a>
+            <div href="#" class="button" id="login_btn" onclick="login()">Login</div>
             <div class="checkbox">
             <input type="checkbox" name="check" id="check" class="check">
             <p>Remember Me </p>
@@ -26,4 +26,34 @@
         </div>
     </div>
 </body>
+
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBAxH0iNVGmQTxx0loEDchJEwrYi11geFY",
+    authDomain: "game-base-4203.firebaseapp.com",
+    projectId: "game-base-4203",
+    storageBucket: "game-base-4203.appspot.com",
+    messagingSenderId: "614367861461",
+    appId: "1:614367861461:web:1bf7c81c661a8632ffa05c",
+    measurementId: "G-FQ3C0PPKPQ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="js/login.js"></script>
 </html>
