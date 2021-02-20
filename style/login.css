@@ -12,6 +12,26 @@ body{
     min-width: 100vw;
     overflow: hidden;
 }
+.error{
+    position: absolute;
+    top: 0;
+    height: 55px;
+    width: 100%;
+    font-size: 20px;
+    color: black;
+    font-family: system-ui;
+    background: rgb(255, 103, 103);
+    z-index: 10000;
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.close_error{
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 30px;
+}
 .closer{
     display: flex;
     flex-direction: row;
