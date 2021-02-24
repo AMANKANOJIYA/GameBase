@@ -21,6 +21,7 @@ body{
     justify-content: space-evenly;
     position: fixed;
     top: 0px;
+    z-index: 11;
 }
 .logo{
     max-height: 120px;
@@ -72,6 +73,15 @@ body{
     background-size: cover;
     /* background-attachment: fixed; */
     z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main h1{
+    font-size: 60px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
 }
 .clip{
     height: 370px;
@@ -237,6 +247,116 @@ body{
 118deg
 , #0415dd, #04e7fe);
 }
+#main_text{
+    margin-bottom: 120px;
+}
+
+
+/* CRAD MAKER---------------------- */
+.main_container{
+    max-width: 90%;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    /* justify-content: space-around; */
+    overflow-y: none;
+    overflow-x: scroll;
+}
+.card{
+    max-height: 400px;
+    max-width: 350px;
+    min-height: 400px;
+    min-width: 350px;
+    margin: 10px 20px;  
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 30px;
+    background: rgba(255,255,255,0.15);
+    border-top:1px solid rgba(255,255,255,0.5);
+    border-left:1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px);
+}
+#card-1{
+    margin-left: 20px;
+}
+.immage_con{
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.immage_con img{
+    height: 190px;
+    width: 90%;
+    border-radius: 30px;
+}
+.immage_con div{
+    position:absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 46px;
+    left: -29px;
+    transform: rotateZ(-45deg);
+    height: 53px;
+    width: 200px;
+    color: white;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #4025fb, #624dff);
+    clip-path: polygon(72% 0, 98% 101%, 0 96%, 25% 0);
+}
+.game_con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.game_name{
+    color: white;
+    font-size: 26px;
+    width: 80%;
+}
+.game_info{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 17px;
+    color: white;
+    font-weight: 500;
+}
+.imp_btn{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+.imp_btn a{
+    text-decoration: none;
+    height: 42px;
+    width: 110px;
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #4025fb, #624dff);
+    box-shadow:1px  1px 20px #000000d6;
+}
+/* CARD MAKER---------------------- */
 /* .container{
     position: relative;
     display: flex;

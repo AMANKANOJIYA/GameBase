@@ -14,19 +14,35 @@
     </div>
     <div class="clip" id="social"></div>
     <div class="main" id="main">
-        
+        <h1 id="main_text">this will container text</h1>
     </div>
-    <div class="check"></div>
-    <!-- <div class="container">
-    <div class="card">
-        <div class="content">
-            <h2>03</h2>
-            <h3>card three</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quasi quam perspiciatis architecto suscipit dolore hic sed officiis laboriosam ea.</p>
-            <a href="#">Read More</a>
+    <!-- <div class="check"></div> -->
+
+
+    <div class="main_container" id="main_container">
+        <div class="card " id="card-1">
+            <div class="immage_con">
+                <img src="photos/bg-story.7.jpg" alt="IMAGE NOT FOUND">
+                <div>NEW</div>
+            </div>
+            <div class="game_con">
+                <div class="game_name">
+                    MARIO
+                </div>
+                <div class="game_info">
+                    <div class="rate">4.0   rating</div>
+                    <div class="views" style="color: #9d9d9d;"><span style="color: #4025FB; font-weight: 600;">30,300,00</span> Views </div>
+                </div>
+                <div class="imp_btn">
+                    <a href="">Play Now</a>
+                    <a href="">Review</a>
+                </div>
+            </div>
         </div>
     </div>
-</div> -->
+
+
+
 <div id="logout_on" style="height: 100px; color: white; cursor: pointer;" onclick="logout_l()">LOG OUT </div>
 <footer class="footer" id="main_footer">
     <div id="sec-1" class="sec">
@@ -97,6 +113,7 @@ Copyright © 2021 All rights reserved | This template is made with <a href="#" t
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
 
 <script>
   // Your web app's Firebase configuration
@@ -114,5 +131,29 @@ Copyright © 2021 All rights reserved | This template is made with <a href="#" t
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>
+<script src="js/jquery-3.5.1.js"></script>
 <script src="js/main.js"></script>
 </html>
+
+
+
+<!-- 
+<div class="card " id="card-5">
+    <div class="immage_con">
+        <img src="photos/bg-story.7.jpg" alt="IMAGE NOT FOUND">
+        <div>NEW</div>
+    </div>
+    <div class="game_con">
+        <div class="game_name">
+            MARIO
+        </div>
+        <div class="game_info">
+            <div class="rate">4.0   rating</div>
+            <div class="views" style="color: #9d9d9d;"><span style="color: #4025FB; font-weight: 600;">30,300,00</span> Views </div>
+        </div>
+        <div class="imp_btn">
+            <a href="">Play Now</a>
+            <a href="">Review</a>
+        </div>
+    </div>
+</div> -->

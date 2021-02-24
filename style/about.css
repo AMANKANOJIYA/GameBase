@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0B111F ;
+    overflow-x: hidden;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    width: 100%;
+    background: linear-gradient(to bottom, transparent,#0B111F ),
+      url("../photos/bg-openworld.7.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.copyright_text{
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.copy_text{
+    color: rgb(188 188 188 / 75%);
+    font-size: 16px;
+    line-height: 2.1;
+    font-weight: 400;
+    margin-bottom: 3px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.copy_text a{
+    text-decoration: none;
+    color: red;
+    font-weight: 500;
+}
+.about{
+    height:700px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 1300px;
+}
+.about h1 span{
+    color: blue;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.about h1 span:hover{
+    text-shadow: 1px 1px 14px rgb(43 79 255);
+}
