@@ -44,7 +44,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   main_c.appendChild(div);
     }
   })
-// --------------fade in animation for main text------------------------
+// --------------fade in animation for main-----------
 let text=document.getElementById("main_text");
   $(document).ready(function(){ 
     $(window).scroll(function(){ 

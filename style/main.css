@@ -262,6 +262,13 @@ body{
     overflow-y: none;
     overflow-x: scroll;
 }
+.swiper-wrapper{
+    max-width: 90%;
+    display: flex;
+    flex-direction: row;
+    overflow-y: none;
+    overflow-x: scroll;
+}
 .card{
     max-height: 400px;
     max-width: 350px;
