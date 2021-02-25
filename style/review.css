@@ -64,7 +64,6 @@ body{
     z-index: 1;
 }
 .main{
-    height: 800px;
     width: 100%;
     /* background: linear-gradient(to bottom, transparent,#0B111F ),
       url("../photos/saints-row-hero-layer-1-1920w.jpg"); */
@@ -72,11 +71,10 @@ body{
       url("../photos/reviews.svg");
     background-position: center;
     background-size: cover;
-    /* background-attachment: fixed; */
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
 }
 .clip{
     height: 370px;
@@ -103,18 +101,52 @@ body{
 }
 /* -----------------main_container---------------------------- */
 .main_container{
-    position: absolute;
+    margin-top: 260px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    top: 60%;
-    background: red;
+    background: rgb(0 0 0 / 38%);
     width: 80%;
-    /* height: 500px; */
+    height: auto;
+    padding-bottom: 100px;
 }
-
-
+.images_cont{
+    margin-top: 50px;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.game_image{
+    height:360px;
+    width: 360px;
+    border-radius: 20px;
+}
+.cont{
+    height: 360px;
+    width: 850px;
+}
+.reviews{
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.reviews h1{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 70px;
+}
+.reviews p{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
 
 /* foooter------------------------------------------------- */
 .footer{
