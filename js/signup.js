@@ -26,23 +26,57 @@ close_error.addEventListener("click",()=>{
   error.style.display="none"
 })
 function signup (){
+    let login_username=document.getElementById("signup_username").value
     let login_email=document.getElementById("signup_email").value
     let login_password=document.getElementById("signup_password").value
     let login_cpassword=document.getElementById("signup_cPassword").value
-    if (login_password==login_cpassword){
-    firebase.auth().createUserWithEmailAndPassword(login_email, login_password)
-        .then((userCredential) => {
-            // Signed in 
-            var user = userCredential.user;
-            // ...
-        })
-        .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            error_gen(errorCode,errorMessage);
-        });
-    }
-    else{
-      console.log("they are different")
-    }
+    // =========================================================
+    var firebaseref=firebase.database().ref("user");
+    firebaseref.on("value",(snapshot)=>{
+      var data=snapshot.val();
+      for (let i in data){
+        console.log(i,login_username)
+        if (i==login_username){
+          error_gen("USER SAME","User name alredy exsists pls try to make it Unique");
+          break
+        }
+        else{
+          if (login_password==login_cpassword){
+            firebase.auth().createUserWithEmailAndPassword(login_email, login_password)
+                .then((userCredential) => {
+                    // Signed in 
+                    var user = userCredential.user;
+                    // ...
+                })
+                .catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    error_gen(errorCode,errorMessage);
+                });
+              firebase.database().ref("user/"+login_username).set({
+                  email:login_email,
+                  profile_pic:"../photos/base.png",
+                  user_name:login_username
+              }).then((userCredential) => {
+                // Signed in 
+                var user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                error_gen(errorCode,errorMessage);
+            });
+            login_username=""
+            login_email=""
+            login_password=""
+            login_cpassword=""
+            }
+            else{
+              console.log("they are different")
+            }
+        }
+      }
+    })
+    // ========================================================
 }

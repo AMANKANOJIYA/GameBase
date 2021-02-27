@@ -34,7 +34,7 @@ firebase.auth().onAuthStateChanged(function(user) {
           </div>
           <div class="imp_btn unselectebal">
               <a href="${data[i]['Link']}">Play Now</a>
-              <a href="">Review</a>
+              <a href="review.html?game_id=${i}">Review</a>
           </div>
       </div>
   </div>`

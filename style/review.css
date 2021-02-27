@@ -107,7 +107,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background: rgb(0 0 0 / 38%);
+    background: rgb(0 0 0 / 62%);
     width: 80%;
     height: auto;
     padding-bottom: 50px;
@@ -236,10 +236,10 @@ body{
 .comment{
     display: flex;
     align-items: center;
-    justify-content: space-around;
     flex-direction: row;
     margin-top: 30px;
     margin-bottom: 30px;
+    min-width: 915px;
 }
 .user_comment_pic{
     height: 70px;
@@ -266,7 +266,8 @@ body{
 }
 .comment_text{
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 15px;
+    letter-spacing: 1px;
 }
 
 /* foooter------------------------------------------------- */
