@@ -84,6 +84,10 @@ body{
     color: white;
 }
 .clip{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     height: 370px;
     width: 70px;
     border-bottom-left-radius: 60px;
@@ -97,10 +101,20 @@ body{
     right: 0px;
     transition: 0.5s;
     z-index: 10;
+    padding: 60px 0px;
 }
 .clip:hover{
     box-shadow: -20px 20px 50px rgba(20, 36, 255, 0.562);
     border-left:0px;
+}
+.link_social{
+    text-decoration: none;
+}
+.image_social{
+    height: 40px;
+    width: 40px;
+    -webkit-filter: invert(100%); /* Safari/Chrome */
+    filter: invert(100%);
 }
 .check{
     height: 800px;
@@ -253,14 +267,40 @@ body{
 
 
 /* CRAD MAKER---------------------- */
+.game_glass{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 600px;
+}
+.heading_game_glass{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    cursor: pointer;
+    transition: 0.8s;
+    margin-bottom: -30px;
+}
+.border_bottom{
+    width: 0px;
+    background: white;
+    height: 10px;
+    opacity: 0;
+    transition: 0.8s;
+}
+.heading_game_glass:hover + .border_bottom{
+    width: 250px;
+    opacity: 1;
+}
 .main_container{
     max-width:100vw;
     display: flex;
     flex-direction: row;
-    /* align-items: center; */
-    /* justify-content: space-around; */
     overflow-y: none;
-    overflow-x: scroll;
+    overflow-x: hidden;
+    padding-right: 100px;
 }
 .swiper-wrapper{
     max-width: 90%;
@@ -288,7 +328,7 @@ body{
     margin-bottom: 40px;
 }
 #card-1{
-    margin-left: 140px;
+    margin-left: 85px;
 }
 .immage_con{
     margin-top: 15px;
@@ -381,7 +421,121 @@ body{
     border-radius: 5px;
 }
 /* --------------scroll----------------- */
-
+/* game adre------------------------------ */
+#c2{
+    padding-top: 14%;
+    bottom: -30px;
+    right: -30px;
+    overflow: hidden;
+    animation-delay: 0.5s;
+    animation: cross2 2s;
+}
+#c1{
+    padding-bottom: 10%;
+    top:-30px;
+    left:-30px;
+    overflow: hidden;
+    animation-delay: 0.5s;
+    animation: cross1 2s;
+}
+.auth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:400px ;
+    width: 700px;
+box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    border-top:1px solid rgba(255,255,255,0.5);
+    border-left:1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(2.5px);
+    animation-delay: 1s;
+    animation: fadeout 1.5s;
+}
+.form{
+    height: 220px;
+    width: 570px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.auth_title{
+    text-transform: uppercase;
+    font-size: 45px;
+    color: white;
+    font-weight: 700;
+    font-family: system-ui;
+}
+.input{
+    width: 80%;
+    height: 40px;
+    color: black;
+    font-size: 20px;
+    margin-top: 10px;
+    padding-left: 20px;
+    border-radius: 8px;
+    border: 2px white solid;
+    background: transparent;
+    font-family: system-ui;
+}
+.input:focus{
+    background-color:white;
+    color: black;
+    border-radius: 8px;
+}
+::placeholder{
+    color:white;
+}
+.button_auth{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    height: 51px;
+    width: 65%;
+    align-items: center;
+    justify-content: center;
+}
+.button{
+    text-decoration: none;
+    display: flex;
+    color: white;
+    background-color: #FE8B04;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 130px;
+}
+.button_auth div input{
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: 2px solid black ;
+    border-radius: 2px;
+    height: 15px;
+    width:15px;
+    outline: none;
+    z-index: 1;
+}
+.background_gamefill{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    width: 100vw;
+    background: url("../photos/bg_wmg_brawlstars.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
 /* .container{
     position: relative;
     display: flex;

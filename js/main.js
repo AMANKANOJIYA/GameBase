@@ -8,7 +8,12 @@ function logout_l(){
 // auth check if user sign up or loged in
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      // User is signed in.
+      if (user.email=="amarsingh@gmail.com"){
+        const template=document.getElementById("auth_user");
+        const after=document.getElementById("growmore")
+        const content=template.content.cloneNode(true);
+        after.after(content)
+      }
     } else {
       // No user is signed in.
       window.location.assign("http://127.0.0.1:5500/login.html")
@@ -52,3 +57,51 @@ let text=document.getElementById("main_text");
         $("#main_text").css("margin-top",($(window).scrollTop()/400)*500)
     }) 
 }) 
+// scroll-----took help form codepen--------------------------------------------
+const slider = document.querySelectorAll('.main_container');
+let isDown = false;
+let startX;
+let scrollLeft;
+slider.forEach((slider)=>{
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+  slider.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) ; //scroll-fast
+    slider.scrollLeft = scrollLeft - walk;
+    console.log(walk);
+  });
+})
+// add.------ game for admin-------------------
+function addGame(){
+    let link=document.getElementById("addgame_link").value;
+    let name=document.getElementById("addgame_name").value;
+    let image_link=document.getElementById("addgame_imagelink").value;
+    // var postListRef = firebase.database().ref('GameBase');
+    // var newPostRef = postListRef.push();
+    //   newPostRef.set({
+    //   Link:link,
+    //   Name:name,
+    //   Rate:0.0,
+    //   Tag:"NEW",
+    //   image_link:image_link,
+    //   Views:0
+    // })
+    console.log(
+      link,name,image_link
+    )
+}
