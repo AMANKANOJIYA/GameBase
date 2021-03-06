@@ -78,6 +78,10 @@ body{
     align-items: center;
 }
 .clip{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     height: 370px;
     width: 70px;
     border-bottom-left-radius: 60px;
@@ -91,10 +95,20 @@ body{
     right: 0px;
     transition: 0.5s;
     z-index: 10;
+    padding: 60px 0px;
 }
 .clip:hover{
     box-shadow: -20px 20px 50px rgba(20, 36, 255, 0.562);
     border-left:0px;
+}
+.link_social{
+    text-decoration: none;
+}
+.image_social{
+    height: 40px;
+    width: 40px;
+    -webkit-filter: invert(100%); /* Safari/Chrome */
+    filter: invert(100%);
 }
 .check{
     height: 800px;
@@ -128,7 +142,7 @@ body{
 }
 .cont{
     height: 360px;
-    width: 850px;
+    width: 700px;
 }
 .reviews{
     width: 90%;
@@ -137,6 +151,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 45px;
 }
 .reviews h1{
     color: white;

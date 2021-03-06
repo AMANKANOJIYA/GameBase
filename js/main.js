@@ -9,10 +9,25 @@ function logout_l(){
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       if (user.email=="amarsingh@gmail.com"){
-        const template=document.getElementById("auth_user");
-        const after=document.getElementById("growmore")
-        const content=template.content.cloneNode(true);
-        after.after(content)
+        const div_game=document.getElementById("auth_user");
+        div_game.style.display="block"
+              const template=document.getElementById("addgame");
+              let element=`
+              <h2 class="auth_title" id="title_auth_l">create<span style="color:#FE8B04 ;"> account</span></h2>
+              <form action="" method="post" class="form" id="login_form">
+                  <input type="text" id="addgame_name" placeholder="Name" autocomplete="off" class="input">
+                  <input type="url" id="addgame_link" placeholder="Game Link" autocomplete="off" class="input">
+                  <input type="url" id="addgame_imagelink" placeholder="Game Image Link" autocomplete="off" class="input">
+              </form>
+              <div class="button_auth">
+                  <div class="button" id="addgame" style="cursor:pointer;" onclick="addGame()">ADD Game</div>
+              </div>
+              </div>`
+              // var div=document.createElement("div");
+              template.innerHTML=element;
+              // div.className="background_gamefill";
+              // template.appendChild(div);
+              // after.after(content)
       }
     } else {
       // No user is signed in.
@@ -24,29 +39,29 @@ firebase.auth().onAuthStateChanged(function(user) {
   firebaseref.once("value",(snapshot)=>{
     var data=snapshot.val();
     for (let i in data){
-      let element=`<div class="card unselectebal" id="card-${data[i]['Name']}">
-      <div class="immage_con unselectebal">
-          <img src="photos/bg-story.7.jpg" alt="IMAGE NOT FOUND">
-          <div>${data[i]['Tag']}</div>
-      </div>
-      <div class="game_con unselectebal">
-          <div class="game_name unselectebal">
-          ${data[i]['Name']}
+          let element=`<div class="card unselectebal" id="card-${data[i]['Name']}">
+          <div class="immage_con unselectebal">
+              <img src="${data[i]['image_link']}" alt="IMAGE NOT FOUND">
+              <div>${data[i]['Tag']}</div>
           </div>
-          <div class="game_info unselectebal">
-              <div class="rate unselectebal">${data[i]['Rate']}   rating</div>
-              <div class="views unselectebal" style="color: #9d9d9d;"><span style="color: #4025FB; font-weight: 600;">${data[i]['Views']}</span> Views </div>
+          <div class="game_con unselectebal">
+              <div class="game_name unselectebal">
+              ${data[i]['Name']}
+              </div>
+              <div class="game_info unselectebal">
+                  <div class="rate unselectebal">${data[i]['Rate']}   rating</div>
+                  <div class="views unselectebal" style="color: #9d9d9d;"><span style="color: #4025FB; font-weight: 600;">${data[i]['Views']}</span> Views </div>
+              </div>
+              <div class="imp_btn unselectebal">
+                  <a href="${data[i]['Link']}">Play Now</a>
+                  <a href="review.html?game_id=${i}">Review</a>
+              </div>
           </div>
-          <div class="imp_btn unselectebal">
-              <a href="${data[i]['Link']}">Play Now</a>
-              <a href="review.html?game_id=${i}">Review</a>
-          </div>
-      </div>
-  </div>`
-  const main_c=document.getElementById("main_container");
-  var div=document.createElement("div");
-  div.innerHTML=element;
-  main_c.appendChild(div);
+      </div>`
+      const main_c=document.getElementById("main_container");
+      var div=document.createElement("div");
+      div.innerHTML=element;
+      main_c.appendChild(div);
     }
   })
 // --------------fade in animation for main-----------
@@ -91,17 +106,24 @@ function addGame(){
     let link=document.getElementById("addgame_link").value;
     let name=document.getElementById("addgame_name").value;
     let image_link=document.getElementById("addgame_imagelink").value;
-    // var postListRef = firebase.database().ref('GameBase');
-    // var newPostRef = postListRef.push();
-    //   newPostRef.set({
-    //   Link:link,
-    //   Name:name,
-    //   Rate:0.0,
-    //   Tag:"NEW",
-    //   image_link:image_link,
-    //   Views:0
-    // })
-    console.log(
-      link,name,image_link
-    )
+    var postListRef = firebase.database().ref('GameBase');
+    var newPostRef = postListRef.push();
+      newPostRef.set({
+      Link:link,
+      Name:name,
+      Rate:0.0,
+      Tag:"NEW",
+      image_link:image_link,
+      Views:0
+    })
+    link.value=""
+    name.value=""
+    image_link.value=""
 }
+// vanila tilt shift----------------------------------
+VanillaTilt.init(document.querySelector("#auth_user .background_gamefill #addgame"), {
+  max: 10,
+  speed: 400,
+  glare:true,
+  "max-glare":0.6
+});

@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/loader.css">
 </head>
 <body>
+  <div class="preloader" id="preloader">
+    <div class="loader" id="loader"></div></div>
   <div class="error" id="error"><span id="error_text"></span><span class="close_error" id="close_error">&#10006;</span></div>
     <div class="closer">
     <img src="photos/asset 5.png" class="cross" id="c1" alt="">
@@ -57,4 +60,5 @@
   firebase.analytics();
 </script>
 <script src="js/login.js"></script>
+<script src="js/loader.js"></script>
 </html>

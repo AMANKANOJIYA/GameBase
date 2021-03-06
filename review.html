@@ -5,32 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/review.css">
-    <!-- <link rel="stylesheet" href="style/main.css"> -->
+    <link rel="stylesheet" href="style/loader.css">
 </head>
 <body onselectstart="return false">
+    <div class="preloader" id="preloader">
+    <div class="loader" id="loader"></div></div>
     <div class="top">
         <div class="first tilt" id="first_m"></div>
         <img src="photos/logo.png" alt="" class="logo" id="logo_m">
         <div class="second  tilt" id="second_m"></div>
     </div>
     <div class="clip" id="social">
-        
+        <a href="https://www.instagram.com/" class="link_social" target="_blank"><img src="photos/instagram.png" alt="" class="image_social"></a>
+        <a href="https://www.facebook.com/" class="link_social" target="_blank"><img src="photos/facebook.png" alt="" class="image_social"></a>
+        <a href="https://www.linkedin.com/" class="link_social" target="_blank"><img src="photos/linkedin.png" alt="" class="image_social"></a>
     </div>
     <div class="main" id="main">
         <div class="main_container" id="main_container">
             <div class="images_cont" >
-                <img src="photos/logo.png" alt="" class="game_image">
+                <img src="photos/logo.png" alt="" class="game_image" id="game_image">
                 <div class="cont"></div>
             </div>
             <div class="reviews">
-                <h1>this is a heading</h1>
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, magni quod qui veniam necessitatibus omnis nesciunt itaque error numquam eaque voluptate ratione quisquam aliquam maxime, laborum consequatur adipisci ea quae?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, magni quod qui veniam necessitatibus omnis nesciunt itaque error numquam eaque voluptate ratione quisquam aliquam maxime, laborum consequatur adipisci ea quae?
-                </p>
-                <p>
+                <h1>Game Description</h1>
+                <p id="description_text">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, magni quod qui veniam necessitatibus omnis nesciunt itaque error numquam eaque voluptate ratione quisquam aliquam maxime, laborum consequatur adipisci ea quae?
                 </p>
             </div>
@@ -185,4 +183,5 @@ Copyright © 2021 All rights reserved | This template is made with <a href="#" t
 </script>
 <script src="js/jquery-3.5.1.js"></script>
 <script src="js/review.js"></script>
+<script src="js/loader.js"></script>
 </html>

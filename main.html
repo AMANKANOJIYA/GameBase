@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/loader.css">
 </head>
 <body onselectstart="return false">
+    <div class="preloader" id="preloader">
+        <div class="loader" id="loader"></div></div>
     <div class="top">
         <div class="first tilt" id="first_m"></div>
         <img src="photos/logo.png" alt="" class="logo" id="logo_m">
         <div class="second  tilt" id="second_m"></div>
     </div>
     <div class="clip" id="social">
-        <a href="https://www.instagram.com/" class="link_social"><img src="photos/instagram.png" alt="" class="image_social"></a>
-        <a href="https://www.facebook.com/" class="link_social"><img src="photos/facebook.png" alt="" class="image_social"></a>
-        <a href="https://www.linkedin.com/" class="link_social"><img src="photos/linkedin.png" alt="" class="image_social"></a>
+        <a href="https://www.instagram.com/" class="link_social" target="_blank"><img src="photos/instagram.png" alt="" class="image_social"></a>
+        <a href="https://www.facebook.com/" class="link_social" target="_blank"><img src="photos/facebook.png" alt="" class="image_social"></a>
+        <a href="https://www.linkedin.com/" class="link_social" target="_blank"><img src="photos/linkedin.png" alt="" class="image_social"></a>
     </div>
     <div class="main" id="main">
         <h1 id="main_text">Awesome Gaming Website</h1>
@@ -184,7 +187,7 @@
         <h3 class="heading_game_glass">Trending</h3>
         <div class="border_bottom"></div>
         <div class="main_container" id="main_container">
-            <div class="card " id="card-1">
+            <div class="card tilt" id="card-1">
                 <div class="immage_con">
                     <img src="photos/bg-story.7.jpg" alt="IMAGE NOT FOUND">
                     <div>NEW</div>
@@ -339,10 +342,10 @@
         </div>
     </div>
 </div>
-    <template id="auth_user">
+    <div id="auth_user">
         <div class="background_gamefill">
-            <div class="auth tilt" id="login">
-                <h2 class="auth_title" id="title_auth_l">create<span style="color:#FE8B04 ;"> account</span></h2>
+            <div class="auth tilt" id="addgame">
+                <!-- <h2 class="auth_title" id="title_auth_l">create<span style="color:#FE8B04 ;"> account</span></h2>
                 <form action="" method="post" class="form" id="login_form">
                     <input type="text" id="addgame_name" placeholder="Name" autocomplete="off" class="input">
                     <input type="url" id="addgame_link" placeholder="Game Link" autocomplete="off" class="input">
@@ -351,10 +354,10 @@
                 <div class="button_auth">
                     <div class="button" id="addgame" style="cursor:pointer;" onclick="addGame()">ADD Game</div>
                 </div>
-                </div>
+                </div> -->
             </div>
         </div>
-    </template>
+    </div>
 
 
 
@@ -408,14 +411,6 @@
 Copyright © 2021 All rights reserved | This template is made with <a href="#" target="_blank">Aman Kanojiya</a></p>
 </div>
 <script src="js/vanilla-tilt.js"></script>
-<script>
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
-            max: 10,
-            speed: 400,
-            glare:true,
-            "max-glare":0.6
-        });
-</script>
 </body>
 <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
@@ -448,6 +443,15 @@ Copyright © 2021 All rights reserved | This template is made with <a href="#" t
 </script>
 <script src="js/jquery-3.5.1.js"></script>
 <script src="js/main.js"></script>
+<script>
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+            max: 10,
+            speed: 400,
+            glare:true,
+            "max-glare":0.6
+        });
+</script>
+<script src="js/loader.js"></script>
 </html>
 
 

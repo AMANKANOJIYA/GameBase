@@ -18,6 +18,21 @@ firebase.auth().onAuthStateChanged(function(user) {
 var url_string = window.location;
 var url = new URL(url_string);
 var game_id = url.searchParams.get("game_id");
+
+// data to change in the give thoings-------------------------
+const game_image=document.getElementById("game_image");
+const description=document.getElementById("description_text");
+var firebaseref=firebase.database().ref("GameBase");
+  firebaseref.once("value",(snapshot)=>{
+    var data=snapshot.val();
+    for (let i in data){
+      console.log(i,game_id)
+      if(i==game_id){
+        game_image.src=data[i]["image_link"]
+        description.innerText=data[i]["description"]
+      }
+    }
+  })
 // ======================================================= 
 //   comment add and featuch
 function addcomment(){
@@ -33,7 +48,6 @@ function addcomment(){
     // comment from element
     let comment=document.getElementById("comment");
     comment=comment.value;
-    console.log(comment)
       let data=element.val()
       var postListRef = firebase.database().ref('Comment');
       var newPostRef = postListRef.push();
