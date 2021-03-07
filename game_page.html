@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameMain</title>
+    <link rel="icon" href="photos/logo.png">
+    <link rel="stylesheet" href="style/game_page.css">
+    <link rel="stylesheet" href="style/loader.css">
+</head>
+<body onselectstart="return false">
+    <!-- <div class="preloader" id="preloader">
+        <div class="loader" id="loader"></div></div> -->
+    <div class="top">
+        <div class="first tilt" id="first_m"></div>
+        <img src="photos/logo.png" alt="" class="logo" id="logo_m">
+        <div class="second  tilt" id="second_m"></div>
+    </div>
+    <div class="clip" id="social">
+        <a href="https://www.instagram.com/" class="link_social" target="_blank"><img src="photos/instagram.png" alt="" class="image_social"></a>
+        <a href="https://www.facebook.com/" class="link_social" target="_blank"><img src="photos/facebook.png" alt="" class="image_social"></a>
+        <a href="https://www.linkedin.com/" class="link_social" target="_blank"><img src="photos/linkedin.png" alt="" class="image_social"></a>
+    </div>
+<div class="main_game" id="main_game">
+    <div id="game_block" class="game_block">
+    <iframe src="main.html" frameborder="0" class="game_in" id="game_in">
+    </iframe>
+    <img src="photos/fullscreen.png" alt="" id="fullscreen" class="icons">
+    <img src="photos/close.png" alt="" id="closers" class="icons">
+</div>
+    <div class="button_req">
+        <div class="button tilt" id="close">Close</div>
+        <div class="button tilt" id="review">Review</div>
+    </div>
+</div>
+
+<footer class="footer" id="main_footer">
+    <div id="sec-1" class="sec">
+            <a href="index.html"><img src="photos/logo.png" alt=""><h2>Gamealine</h2></a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris velit arcu, scelerisque dignissim massa quis, mattis facilisis erat. Aliquam erat volutpat. Sed efficitur diam ut interdum ultricies onsectetur adipisicing elit. Tempora, suscipit. </p>
+    </div>
+    <div id="sec-2" class="sec">
+        <div class="single_footer_part">
+            <h4>Contact Info</h4>
+            <p>Address : Your address goes
+                here, your demo address.
+                Bangladesh.</p>
+            <p>Phone : +8880 44338899</p>
+            <p>Email : info@colorlib.com</p>
+        </div>
+    </div>
+    <div id="sec-3" class="sec">
+        <div class="single_footer_part">
+            <h4>Important Link</h4>
+            <ul class="list-unstyled">
+                <li><a href=""> WHMCS-bridge</a></li>
+                <li><a href="">Search Domain</a></li>
+                <li><a href="">My Account</a></li>
+                <li><a href="">Shopping Cart</a></li>
+                <li><a href="">Our Shop</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="sec-4" class="sec">
+        <div class="single_footer_part">
+            <h4>Newsletter</h4>
+            <p>Heaven fruitful doesn't over lesser in days. Appear creeping seasons deve behold
+                bearing
+                days
+                open
+            </p>
+            <div id="mc_embed_signup">
+                <form target="_blank">
+                    <input type="email" name="EMAIL" id="newsletter-form-email" placeholder="Email Address" class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Email Address '">
+                    <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">&aring;</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="copyright_text">
+<p class="copy_text">
+Copyright © 2021 All rights reserved | This template is made with <a href="#" target="_blank">Aman Kanojiya</a></p>
+</div>
+<script src="js/vanilla-tilt.js"></script>
+</body>
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBAxH0iNVGmQTxx0loEDchJEwrYi11geFY",
+    authDomain: "game-base-4203.firebaseapp.com",
+    projectId: "game-base-4203",
+    storageBucket: "game-base-4203.appspot.com",
+    messagingSenderId: "614367861461",
+    appId: "1:614367861461:web:1bf7c81c661a8632ffa05c",
+    measurementId: "G-FQ3C0PPKPQ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="js/jquery-3.5.1.js"></script>
+<script src="js/game_page.js"></script>
+<script>
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+            max: 10,
+            speed: 400,
+            glare:true,
+            "max-glare":0.6
+        });
+</script>
+<!-- <script src="js/loader.js"></script> -->
+</html>
