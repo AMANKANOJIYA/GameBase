@@ -121,7 +121,7 @@ body{
     width: 100%;
 }
 .footer{
-    height: 450px;
+    height: auto;
     width: 100%;
     background-color: black;
     display: flex;
@@ -129,12 +129,14 @@ body{
     justify-content: space-around;
     align-items: center;
     border-top: white 2px solid;
+    flex-wrap: wrap;
 }
 .footer .sec{
     height: 320px;
     width: 290px;
     display: flex;
     flex-direction: column;
+    margin-top: 40px;
     /* justify-content: space-around; */
 }
 #sec-1 a {
@@ -234,6 +236,7 @@ body{
     line-height: 2.1;
     font-weight: 400;
     margin-bottom: 3px;
+    text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .copy_text a{
@@ -441,9 +444,9 @@ body{
 .auth{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    height:400px ;
+    height:600px ;
     width: 700px;
 box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     border-radius: 15px;
@@ -455,7 +458,7 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     animation: fadeout 1.5s;
 }
 .form{
-    height: 220px;
+    height: 400px;
     width: 570px;
     display: flex;
     flex-direction: column;
@@ -510,6 +513,7 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     justify-content: center;
     height: 45px;
     width: 130px;
+    margin-bottom: 50px;
 }
 .button_auth div input{
     cursor: pointer;
@@ -528,7 +532,7 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 600px;
+    height: 800px;
     width: 100vw;
     background: url("../photos/bg_wmg_brawlstars.jpg");
     background-position: center;

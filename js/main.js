@@ -18,6 +18,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                   <input type="text" id="addgame_name" placeholder="Name" autocomplete="off" class="input">
                   <input type="url" id="addgame_link" placeholder="Game Link" autocomplete="off" class="input">
                   <input type="url" id="addgame_imagelink" placeholder="Game Image Link" autocomplete="off" class="input">
+                  <textarea type="text" id="addgame_description" placeholder="Game Description" cols="30" rows="10" autocomplete="off" class="input"></textarea>
               </form>
               <div class="button_auth">
                   <div class="button" id="addgame" style="cursor:pointer;" onclick="addGame()">ADD Game</div>
@@ -102,6 +103,7 @@ function addGame(){
     let link=document.getElementById("addgame_link").value;
     let name=document.getElementById("addgame_name").value;
     let image_link=document.getElementById("addgame_imagelink").value;
+    let desc=document.getElementById("addgame_description").value;
     var postListRef = firebase.database().ref('GameBase');
     var newPostRef = postListRef.push();
       newPostRef.set({
@@ -110,11 +112,12 @@ function addGame(){
       Rate:0.0,
       Tag:"NEW",
       image_link:image_link,
-      Views:0
+      Views:0,
+      description:desc
     })
-    link.value=""
-    name.value=""
-    image_link.value=""
+    link=""
+    name=""
+    image_link=""
 }
 // vanila tilt shift----------------------------------
 VanillaTilt.init(document.querySelector("#auth_user .background_gamefill #addgame"), {
