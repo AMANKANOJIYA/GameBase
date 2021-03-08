@@ -23,11 +23,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                   <div class="button" id="addgame" style="cursor:pointer;" onclick="addGame()">ADD Game</div>
               </div>
               </div>`
-              // var div=document.createElement("div");
               template.innerHTML=element;
-              // div.className="background_gamefill";
-              // template.appendChild(div);
-              // after.after(content)
       }
     } else {
       // No user is signed in.
@@ -53,7 +49,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                   <div class="views unselectebal" style="color: #9d9d9d;"><span style="color: #4025FB; font-weight: 600;">${data[i]['Views']}</span> Views </div>
               </div>
               <div class="imp_btn unselectebal">
-                  <a href="${data[i]['Link']}">Play Now</a>
+                  <a href="game_page.html?game_id=${i}">Play Now</a>
                   <a href="review.html?game_id=${i}">Review</a>
               </div>
           </div>
