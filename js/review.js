@@ -21,6 +21,9 @@ var game_id = url.searchParams.get("game_id");
 
 // data to change in the give thoings-------------------------
 const game_image=document.getElementById("game_image");
+const review_num=document.getElementById("review_num");
+const views_num=document.getElementById("views_num");
+const game_name=document.getElementById("game_name");
 const description=document.getElementById("description_text");
 var firebaseref=firebase.database().ref("GameBase");
   firebaseref.once("value",(snapshot)=>{
@@ -29,7 +32,10 @@ var firebaseref=firebase.database().ref("GameBase");
       console.log(i,game_id)
       if(i==game_id){
         game_image.src=data[i]["image_link"]
+        game_name.innerText=data[i]["Name"]
+        views_num.innerText=data[i]["Views"]
         description.innerText=data[i]["description"]
+        review_num.innerText=data[i]["Rate"]
       }
     }
   })

@@ -50,13 +50,14 @@ firebase.auth().onAuthStateChanged(function(user) {
                   <div class="views unselectebal" style="color: #9d9d9d;"><span style="color: #4025FB; font-weight: 600;">${data[i]['Views']}</span> Views </div>
               </div>
               <div class="imp_btn unselectebal">
-                  <a href="game_page.html?game_id=${i}">Play Now</a>
+                  <a href="game_page.html?game_id=${i}" class="play_now">Play Now</a>
                   <a href="review.html?game_id=${i}">Review</a>
               </div>
           </div>
       </div>`
       const main_c=document.getElementById("main_container");
       var div=document.createElement("div");
+      div.className="tilt";
       div.innerHTML=element;
       main_c.appendChild(div);
     }
@@ -95,7 +96,6 @@ slider.forEach((slider)=>{
     const x = e.pageX - slider.offsetLeft;
     const walk = (x - startX) ; //scroll-fast
     slider.scrollLeft = scrollLeft - walk;
-    console.log(walk);
   });
 })
 // add.------ game for admin-------------------
@@ -118,7 +118,17 @@ function addGame(){
     link=""
     name=""
     image_link=""
+    desc=""
 }
+
+// game _plY CLICK inc views 
+const play_now=document.querySelectorAll(".play_now");
+play_now.forEach(element => {
+  element.addEventListener("click",()=>{
+    let link=element.href.split("?")[-1].split("=")[-1];
+  })
+});
+
 // vanila tilt shift----------------------------------
 VanillaTilt.init(document.querySelector("#auth_user .background_gamefill #addgame"), {
   max: 10,

@@ -143,6 +143,65 @@ body{
 .cont{
     height: 360px;
     width: 700px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.game_name{
+    text-transform: uppercase;
+    font-size: 50px;
+    color: white;
+    font-weight: 700;
+    font-family: system-ui;
+}
+.info{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.review{
+    /* text-transform: uppercase; */
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    font-family: system-ui;
+}
+.review_num{
+    color: rgb(255, 90, 30);
+    font-size: 35px;
+    font-weight: 800;
+}
+.views_num{
+    color: #13a0ff;
+    font-size: 35px;
+    font-weight: 800;
+}
+.views{
+    /* text-transform: uppercase; */
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    font-family: system-ui;
+}
+.tags{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 17px;
+    color: white;
+    font-weight: 400;
+    font-family: system-ui;
+}
+.star{
+    height: 50px;
+    width: 50px;
 }
 .reviews{
     width: 90%;
@@ -157,7 +216,7 @@ body{
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 700;
-    font-size: 70px;
+    font-size: 50px;
 }
 .reviews p{
     color: white;
