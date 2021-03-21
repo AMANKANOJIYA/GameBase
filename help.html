@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="icon" href="photos/logo.png">
+    <link rel="stylesheet" href="style/help.css">
+    <!-- <link rel="stylesheet" href="style/loader.css"> -->
+</head>
+<body>
+    <!-- <div class="preloader" id="preloader">
+        <div class="loader" id="loader"></div></div> -->
+        <div class="top">
+            <div class="first tilt" id="first_m"></div>
+            <img src="photos/logo.png" alt="" class="logo" id="logo_m">
+            <div class="second  tilt" id="second_m"></div>
+        </div>
+        <div class="clip" id="social">
+            <a href="https://www.instagram.com/invites/contact/?i=vcd3ob07f347&utm_content=43fmjm3" class="link_social" target="_blank"><img src="photos/instagram.png" alt="" class="image_social"></a>
+            <a href="https://www.facebook.com/aman.kanojiya.792303" class="link_social" target="_blank"><img src="photos/facebook.png" alt="" class="image_social"></a>
+            <a href="https://www.linkedin.com/in/aman-kanojiya-782263188" class="link_social" target="_blank"><img src="photos/linkedin.png" alt="" class="image_social"></a>
+        </div>
+    <div class="main" id="main">
+        <div class="main_cont">
+            <h1>Contact <span style="color:#00c535;">Us </span> </h1>
+            <div class="form" id="form">
+                <input type="text" name="name" id="name" class="input" placeholder="Name...">
+                    <input type="email" name="email" id="email" class="input" placeholder="Email">
+                    <input type="number" name="mob_no" id="mob_no" class="input" placeholder="Mobile No">
+                <label for="message">Type Your message</label>
+                <textarea type="message" name="message" id="message" cols="30" rows="10" class="input" placeholder="Message">Need Premium Subscription Pls help..</textarea>
+                <a href="#" id="submit" class="submit_btn">Submit</a>
+            </div>
+        </div>
+    </div>
+    </div>
+<div class="copyright_text">
+<p class="copy_text">
+Copyright © 2021 All rights reserved | This template is made with <a href="#" target="_blank">Aman Kanojiya</a></p>
+</div>
+</body>
+<script src="js/vanilla-tilt.js"></script>
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBAxH0iNVGmQTxx0loEDchJEwrYi11geFY",
+    authDomain: "game-base-4203.firebaseapp.com",
+    projectId: "game-base-4203",
+    storageBucket: "game-base-4203.appspot.com",
+    messagingSenderId: "614367861461",
+    appId: "1:614367861461:web:1bf7c81c661a8632ffa05c",
+    measurementId: "G-FQ3C0PPKPQ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="js/help.js"></script>
+<script>
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+            max: 10,
+            speed: 400,
+            glare:true,
+            "max-glare":0.6
+        });
+</script>
+<script src="js/loader.js"></script>
+</html>

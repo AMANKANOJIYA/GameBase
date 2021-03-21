@@ -72,7 +72,7 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     height:400px ;
-    width: 600px;
+    width: 37%;
     background: linear-gradient(
 45deg
 , #000000a6, #0000004f);
@@ -87,7 +87,7 @@ body{
 }
 .form{
     height: 150px;
-    width: 570px;
+    width: 520px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -175,7 +175,7 @@ body{
     text-align: center;
     color: #FE8B04;
     position: absolute;
-    left: 20.7rem;
+    left: 18.9rem;
     top: 18.3em;
     z-index: -1;
 }
@@ -232,6 +232,9 @@ body{
         top:-30px;
         left:-30px;
     }
+    .auth{
+        width: 40%;
+    }
 }
 @media only screen and (max-width:1200px){
     .cross{
@@ -247,6 +250,15 @@ body{
         top:-30px;
         left:-30px;
     }
+    .auth_title {
+        font-size: 35px;
+    }
+    .form{
+        width: 90%;
+    }
+    .auth{
+        width: 60%;
+    }
 }
 @media only screen and (max-width:900px){
     .cross{
@@ -261,5 +273,27 @@ body{
         padding-bottom: 10%;
         top:-30px;
         left:-30px;
+    }
+    .auth{
+        width: 80%;
+    }
+}
+@media only screen and (max-width:650px){
+    .button_auth {
+        display: contents;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .auth_title {
+        font-size: 30px;
+    }
+    .button_auth div {
+        margin-right: 20px;
+        margin-bottom: 15px;
+    }
+    .button{
+        height: 38px;
+        width: 89px;
     }
 }

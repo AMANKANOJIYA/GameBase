@@ -116,7 +116,7 @@ body{
 }
 /* -----------------main_container---------------------------- */
 .main_container{
-    margin-top: 260px;
+    margin-top: 190px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -269,7 +269,6 @@ body{
     display: flex;
     flex-direction: row;
     height: 51px;
-    width: 65%;
     align-items: center;
     justify-content: space-between;
 }
@@ -505,4 +504,91 @@ body{
 ::-webkit-scrollbar-thumb:hover{
     background: #4025fb;
     border-radius: 5px;
+}
+@media only screen and (max-width:1200px){
+    .comment{
+        min-width: 118%;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .form {
+        width: 103%;
+    }
+    .auth{
+        width: 106%;
+        margin-top: 30px;
+    }
+    .cont{
+        width: 100%;
+    }
+.first {
+    display: none;
+}
+.second{
+    display: none;
+}
+.auth_title {
+    font-size: 30px;
+}
+.reviews h1 {
+    font-size: 40px;
+    text-align: center;
+}
+.reviews p {
+    font-size: 14px;
+}
+.star {
+    height: 30px;
+    width: 30px;
+}
+.game_name {
+    font-size: 50px;
+    font-weight: 700;
+    width: 97%;
+    text-align: center;
+}
+
+.game_image {
+    height: 210px;
+    width: 210px;
+}
+.comment_text {
+    font-size: 13px;
+}
+.copy_text {
+    text-align: center;
+}
+.logo {
+    max-height: 70px;
+    max-width: 70px;
+}
+.clip {
+    height: 283px;
+    width: 57px;
+}
+.image_social {
+    height: 30px;
+    width: 30px;
+}
+.button{
+    margin-top: 20px;
+    font-size: 15px;
+    height: 36px;
+    width: 102px;
+}
+.main_container {
+    margin-top: 70px;
+}
+.tags {
+    text-align: center;
+}
+.views_num {
+    font-size: 30px;
+    font-weight: 700;
+margin-top: 20px;}
+.review_num {
+    font-size: 30px;
+    font-weight: 700;}
 }
