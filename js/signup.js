@@ -52,7 +52,7 @@ function signup (){
             user_name:login_username
           }, (error) => {
             if (error) {
-              console.log("eeeeeeeeeeee")
+              error_gen(error.code,error.message)
             } else {
               // Data saved successfully!
               console.log("it wirks4")

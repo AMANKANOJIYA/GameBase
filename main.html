@@ -6,11 +6,12 @@
     <title>GameMain</title>
     <link rel="icon" href="photos/logo.png">
     <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/loader.css">
+    <!-- <link rel="stylesheet" href="style/aos.css"> -->
+    <!-- <link rel="stylesheet" href="style/loader.css"> -->
 </head>
 <body onselectstart="return false">
-    <div class="preloader" id="preloader">
-        <div class="loader" id="loader"></div></div>
+    <!-- <div class="preloader" id="preloader">
+        <div class="loader" id="loader"></div></div> -->
     <div class="top">
         <div class="first tilt" id="first_m">
             <a href="about.html" class="hover_a">About Us</a>
@@ -18,10 +19,49 @@
         </div>
         <img src="photos/logo.png" alt="" class="logo" id="logo_m">
         <div class="second  tilt" id="second_m">
-            <div style="display: flex;">
-            <img src="photos/search.svg" class="search_icon" alt="" srcset="">
+            <div id="search_now" style="display: flex; cursor: pointer;">
+            <img src="photos/search.svg"  class="search_icon">
             <p class="hover_a">Search</p>
         </div>
+        </div>
+    </div>
+    <div class="search" id="search">
+        <div class="search_text" id="search_text">
+            <img src="photos/search.svg" class="search_icon_inp" alt="" srcset="">
+            <input type="search" name="search" id="search_text_inp" class="search_text_inp" placeholder="Search">
+        </div>
+        <div class="search_res" id="search_res">
+            <div class="search_res_game" id="search_res_game-1">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-2">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-3">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-4">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-5">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-5">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-5">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+        </div>
+        <div class="close_sea" id="close_sea">
+            <img src="photos/close.png" id="close_icon_inp" class="close_icon_inp" alt="" srcset="">
         </div>
     </div>
     <div class="clip" id="social">
@@ -144,8 +184,9 @@
 <p class="copy_text">
 Copyright © 2021 All rights reserved | This template is made with <a href="#" target="_blank">Aman Kanojiya</a></p>
 </div>
-<script src="js/vanilla-tilt.js"></script>
 </body>
+<script src="js/vanilla-tilt.js"></script>
+<!-- <script src="js/aos.js"></script> -->
 <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
@@ -185,5 +226,6 @@ Copyright © 2021 All rights reserved | This template is made with <a href="#" t
             "max-glare":1
         });
 </script>
+<script src="js/search.js"></script>
 <script src="js/loader.js"></script>
 </html>

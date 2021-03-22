@@ -12,9 +12,56 @@
     <!-- <div class="preloader" id="preloader">
         <div class="loader" id="loader"></div></div> -->
         <div class="top">
-            <div class="first tilt" id="first_m"></div>
+            <div class="first tilt" id="first_m">
+                <a href="about.html" class="hover_a">About Us</a>
+            <a href="help.html" class="hover_a"> Contact</a>
+            </div>
             <img src="photos/logo.png" alt="" class="logo" id="logo_m">
-            <div class="second  tilt" id="second_m"></div>
+            <div class="second  tilt" id="second_m">
+                <div id="search_now" style="display: flex; cursor: pointer;">
+                    <img src="photos/search.svg"  class="search_icon">
+                    <p class="hover_a">Search</p>
+                </div>
+            </div>
+        </div>
+        <div class="search" id="search">
+            <div class="search_text" id="search_text">
+                <img src="photos/search.svg" class="search_icon_inp" alt="" srcset="">
+                <input type="text" name="search" id="search_text_inp" class="search_text_inp" placeholder="Search">
+            </div>
+            <div class="search_res" id="search_res">
+                <div class="search_res_game" id="search_res_game-1">
+                    <img src="photos/bg-story.7.jpg" alt="">
+                    <h3>This is name of the game</h3>
+                </div>
+                <div class="search_res_game" id="search_res_game-2">
+                    <img src="photos/bg-story.7.jpg" alt="">
+                    <h3>This is name of the game</h3>
+                </div>
+                <div class="search_res_game" id="search_res_game-3">
+                    <img src="photos/bg-story.7.jpg" alt="">
+                    <h3>This is name of the game</h3>
+                </div>
+                <div class="search_res_game" id="search_res_game-4">
+                    <img src="photos/bg-story.7.jpg" alt="">
+                    <h3>This is name of the game</h3>
+                </div>
+                <div class="search_res_game" id="search_res_game-5">
+                    <img src="photos/bg-story.7.jpg" alt="">
+                    <h3>This is name of the game</h3>
+                </div>
+                <div class="search_res_game" id="search_res_game-5">
+                    <img src="photos/bg-story.7.jpg" alt="">
+                    <h3>This is name of the game</h3>
+                </div>
+                <div class="search_res_game" id="search_res_game-5">
+                    <img src="photos/bg-story.7.jpg" alt="">
+                    <h3>This is name of the game</h3>
+                </div>
+            </div>
+            <div class="close_sea" id="close_sea">
+                <img src="photos/close.png" id="close_icon_inp" class="close_icon_inp" alt="" srcset="">
+            </div>
         </div>
         <div class="clip" id="social">
             <a href="https://www.instagram.com/invites/contact/?i=vcd3ob07f347&utm_content=43fmjm3" class="link_social" target="_blank"><img src="photos/instagram.png" alt="" class="image_social"></a>
@@ -26,10 +73,10 @@
             <h1>Contact <span style="color:#00c535;">Us </span> </h1>
             <div class="form" id="form">
                 <input type="text" name="name" id="name" class="input" placeholder="Name...">
-                    <input type="email" name="email" id="email" class="input" placeholder="Email">
-                    <input type="number" name="mob_no" id="mob_no" class="input" placeholder="Mobile No">
+                <input type="email" name="email" id="email" class="input" placeholder="Email">
+                <input type="number" name="mob_no" id="mob_no" class="input" placeholder="Mobile No">
                 <label for="message">Type Your message</label>
-                <textarea type="message" name="message" id="message" cols="30" rows="10" class="input" placeholder="Message">Need Premium Subscription Pls help..</textarea>
+                <textarea type="message" name="message" id="message" cols="30" rows="10" class="input" placeholder="Message">Need Premium Subscription Pls help.</textarea>
                 <a href="#" id="submit" class="submit_btn">Submit</a>
             </div>
         </div>
@@ -52,6 +99,7 @@ Copyright © 2021 All rights reserved | This template is made with <a href="#" t
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
 
 <script>
   // Your web app's Firebase configuration
@@ -78,5 +126,6 @@ Copyright © 2021 All rights reserved | This template is made with <a href="#" t
             "max-glare":0.6
         });
 </script>
+<script src="js/search.js"></script>
 <script src="js/loader.js"></script>
 </html>

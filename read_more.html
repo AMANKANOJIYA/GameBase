@@ -3,66 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameReview</title>
+    <title>GameMain</title>
     <link rel="icon" href="photos/logo.png">
-    <link rel="stylesheet" href="style/review.css">
-    <link rel="stylesheet" href="style/loader.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/read_more.css">
+
+    <!-- <link rel="stylesheet" href="style/loader.css"> -->
 </head>
 <body onselectstart="return false">
-    <div class="preloader" id="preloader">
-    <div class="loader" id="loader"></div></div>
+    <!-- <div class="preloader" id="preloader">
+        <div class="loader" id="loader"></div></div> -->
     <div class="top">
-        <div class="first tilt" id="first_m"></div>
+        <div class="first tilt" id="first_m">
+            <a href="about.html" class="hover_a">About Us</a>
+            <a href="help.html" class="hover_a"> Contact</a>
+        </div>
         <img src="photos/logo.png" alt="" class="logo" id="logo_m">
-        <div class="second  tilt" id="second_m"></div>
+        <div class="second  tilt" id="second_m">
+            <div id="search_now" style="display: flex; cursor: pointer;">
+            <img src="photos/search.svg"  class="search_icon">
+            <p class="hover_a">Search</p>
+        </div>
+        </div>
+    </div>
+    <div class="search" id="search">
+        <div class="search_text" id="search_text">
+            <img src="photos/search.svg" class="search_icon_inp" alt="" srcset="">
+            <input type="search" name="search" id="search_text_inp" class="search_text_inp" placeholder="Search">
+        </div>
+        <div class="search_res" id="search_res">
+            <div class="search_res_game" id="search_res_game-1">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-2">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-3">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-4">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-5">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-5">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-5">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+        </div>
+        <div class="close_sea" id="close_sea">
+            <img src="photos/close.png" id="close_icon_inp" class="close_icon_inp" alt="" srcset="">
+        </div>
     </div>
     <div class="clip" id="social">
         <a href="https://www.instagram.com/invites/contact/?i=vcd3ob07f347&utm_content=43fmjm3" class="link_social" target="_blank"><img src="photos/instagram.png" alt="" class="image_social"></a>
         <a href="https://www.facebook.com/aman.kanojiya.792303" class="link_social" target="_blank"><img src="photos/facebook.png" alt="" class="image_social"></a>
-        <a href="https://www.linkedin.com/in/aman-kanojiya-782263188" class="link_social" target="_blank"><img src="photos/linkedin.png" alt="" class="image_social"></a>    </div>
+        <a href="https://www.linkedin.com/in/aman-kanojiya-782263188" class="link_social" target="_blank"><img src="photos/linkedin.png" alt="" class="image_social"></a>
+    </div>
     <div class="main" id="main">
-        <div class="main_container" id="main_container">
-            <div class="images_cont" >
-                <img src="photos/logo.png" alt="" class="game_image" id="game_image">
-                <div class="cont">
-                    <div class="game_name" id="game_name">This is a game Title</div>
-                    <div class="info" id="info">
-                    <div class="review" id="review"><span id="review_num" class="review_num">12345</span>&nbsp;&nbsp;&nbsp; Rating</div>
-                    <div class="views" id="views"><span id="views_num" class="views_num">12345</span>&nbsp;&nbsp;&nbsp; Views</div>
-                </div>
-                <div class="take_review" id="take_review">
-                    <img src="photos/star.png" alt="" class="star" id="star1">
-                    <img src="photos/star.png" alt="" class="star" id="star2">
-                    <img src="photos/star.png" alt="" class="star" id="star3">
-                    <img src="photos/star.png" alt="" class="star" id="star4">
-                    <img src="photos/star.png" alt="" class="star" id="star5">
-                </div>
-                    <div class="tags" id="tags">#grow &nbsp;#makeit&nbsp;#goin&nbsp;#newone&nbsp;#beginors</div>
+        <div class="comment_block">
+        <div class="add_comment tilt" id="add_comment">
+            <div class="auth" id="login">
+                <h2 class="auth_title" id="title_auth_l" style="color:#FE8B04 ;">Comments</h2>
+                <form action="" method="post" class="form" id="login_form">
+                    <textarea type="text" id="comment" name="password_login" placeholder="Comment" autocomplete="off" class="input" cols="80" rows="10"></textarea>
+                </form>
+                <div class="button_auth">
+                    <div href="#" class="button" id="comment_btn" onclick="addcomment()">Comment</div>
                 </div>
             </div>
-            <div class="reviews">
-                <h1>Game Description</h1>
-                <p id="description_text">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, magni quod qui veniam necessitatibus omnis nesciunt itaque error numquam eaque voluptate ratione quisquam aliquam maxime, laborum consequatur adipisci ea quae?
-                </p>
-            </div>
-            <br>
-            <div class="comment_user" id="comment_user">
-                <div class="auth" id="login">
-                    <h2 class="auth_title" id="title_auth_l" style="color:#FE8B04 ;">Comments</h2>
-                    <form action="" method="post" class="form" id="login_form">
-                        <textarea type="text" id="comment" name="password_login" placeholder="Comment" autocomplete="off" class="input" cols="80" rows="10"></textarea>
-                    </form>
-                    <div class="button_auth">
-                        <div href="#" class="button" id="comment_btn" onclick="addcomment()">Comment</div>
-                    </div>
-                </div>
-            <div class="some_comment" id="some_comment"></div>
-            <a href="read_more.html"  class="seemore button" id="seemore">Read More</a>
+        </div>
+        <div class="comments" id="comments"></div>
         </div>
     </div>
 
-<!-- <div id="logout_on" style="height: 100px; color: white; cursor: pointer;" onclick="logout_l()">LOG OUT </div> -->
 <footer class="footer" id="main_footer">
     <div id="sec-1" class="sec">
             <a href="index.html"><img src="photos/logo.png" alt=""><h2>Gamealine</h2></a>
@@ -112,14 +136,6 @@
 Copyright © 2021 All rights reserved | This template is made with <a href="#" target="_blank">Aman Kanojiya</a></p>
 </div>
 <script src="js/vanilla-tilt.js"></script>
-<script>
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
-            max: 10,
-            speed: 400,
-            glare:true,
-            "max-glare":0.6
-        });
-</script>
 </body>
 <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
@@ -151,6 +167,15 @@ Copyright © 2021 All rights reserved | This template is made with <a href="#" t
   firebase.analytics();
 </script>
 <script src="js/jquery-3.5.1.js"></script>
-<script src="js/review.js"></script>
+<script>
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+            max: 10,
+            speed: 400,
+            glare:true,
+            "max-glare":1
+        });
+</script>
+<script src="js/search.js"></script>
+<script src="js/read_more.js"></script>
 <script src="js/loader.js"></script>
 </html>

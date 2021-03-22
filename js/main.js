@@ -8,24 +8,28 @@ function logout_l(){
 // auth check if user sign up or loged in
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      if (user.email=="amarsingh@gmail.com"){
-        const div_game=document.getElementById("auth_user");
-        div_game.style.display="block"
-              const template=document.getElementById("addgame");
-              let element=`
-              <h2 class="auth_title" id="title_auth_l">create<span style="color:#FE8B04 ;"> account</span></h2>
-              <form action="" method="post" class="form" id="login_form">
-                  <input type="text" id="addgame_name" placeholder="Name" autocomplete="off" class="input">
-                  <input type="url" id="addgame_link" placeholder="Game Link" autocomplete="off" class="input">
-                  <input type="url" id="addgame_imagelink" placeholder="Game Image Link" autocomplete="off" class="input">
-                  <textarea type="text" id="addgame_description" placeholder="Game Description" cols="30" rows="10" autocomplete="off" class="input"></textarea>
-              </form>
-              <div class="button_auth">
-                  <div class="button" id="addgame" style="cursor:pointer;" onclick="addGame()">ADD Game</div>
-              </div>
-              </div>`
-              template.innerHTML=element;
-      }
+      var firebaseref=firebase.database().ref("Admin");
+      firebaseref.once("value",(snapshot)=>{
+        let email=snapshot.val()["email"]
+        if (user.email==email){
+          const div_game=document.getElementById("auth_user");
+          div_game.style.display="block"
+                const template=document.getElementById("addgame");
+                let element=`
+                <h2 class="auth_title" id="title_auth_l">create<span style="color:#FE8B04 ;"> account</span></h2>
+                <form action="" method="post" class="form" id="login_form">
+                    <input type="text" id="addgame_name" placeholder="Name" autocomplete="off" class="input">
+                    <input type="url" id="addgame_link" placeholder="Game Link" autocomplete="off" class="input">
+                    <input type="url" id="addgame_imagelink" placeholder="Game Image Link" autocomplete="off" class="input">
+                    <textarea type="text" id="addgame_description" placeholder="Game Description" cols="30" rows="10" autocomplete="off" class="input"></textarea>
+                </form>
+                <div class="button_auth">
+                    <div class="button" id="addgame" style="cursor:pointer;" onclick="addGame()">ADD Game</div>
+                </div>
+                </div>`
+                template.innerHTML=element;
+        }
+      })
     } else {
       // No user is signed in.
       window.location.assign("http://127.0.0.1:5500/login.html")
@@ -128,7 +132,6 @@ play_now.forEach(element => {
     let link=element.href.split("?")[-1].split("=")[-1];
   })
 });
-
 // vanila tilt shift----------------------------------
 VanillaTilt.init(document.querySelector("#auth_user .background_gamefill #addgame"), {
   max: 10,

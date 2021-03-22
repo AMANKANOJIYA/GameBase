@@ -14,3 +14,35 @@ firebase.auth().onAuthStateChanged(function(user) {
       window.location.assign("http://127.0.0.1:5500/login.html")
     }
   });
+  let submit=document.getElementById("submit")  
+  submit.addEventListener("click",()=>{
+    var name_=document.getElementById("name").value
+    var email=document.getElementById("email").value
+    var mob_no=document.getElementById("mob_no").value
+    var message=document.getElementById("message").value
+    let today = new Date();
+    let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    let dateTime = date+' '+time;
+    firebase.database().ref('contact/' + name_).set({
+      email:email,
+      name:name_,
+      message:message,
+      mobile_no:mob_no,
+      Time:dateTime
+    }, (error) => {
+      if (error) {
+        // error_gen(error.code,error.message)
+        console.log(error.code,error.message )
+      } else {
+        console.log("it wirks4")
+      }
+    });
+    console.log(name_,email,mob_no,message)
+    name_=""
+    email=""
+    mob_no=""
+    message=""
+    console.log(name_,email,mob_no,message)
+  })
+  
