@@ -18,6 +18,7 @@
     margin: auto;
     perspective: 1000px;
     cursor: pointer;
+    margin-bottom: 30px;
 }
 .inner-box{
     position: relative;
@@ -75,7 +76,7 @@ p{
     border-bottom: 1px solid #fff;
     margin-top: 140px;
     font-family: sans-serif;
-    font-size: 25px;
+    font-size: 16px;
 }
 .p{
     margin-top: 40px;

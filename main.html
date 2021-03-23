@@ -6,12 +6,14 @@
     <title>GameMain</title>
     <link rel="icon" href="photos/logo.png">
     <link rel="stylesheet" href="style/main.css">
-    <!-- <link rel="stylesheet" href="style/aos.css"> -->
-    <!-- <link rel="stylesheet" href="style/loader.css"> -->
+    <!-- for size---------------------------------- -->
+    <link rel="stylesheet" href="style/nav.css">
 </head>
 <body onselectstart="return false">
+    <!-- loader part------------------------------------------------------- -->
     <!-- <div class="preloader" id="preloader">
         <div class="loader" id="loader"></div></div> -->
+    <!-- top part navigation----------------------------------------------- -->
     <div class="top">
         <div class="first tilt" id="first_m">
             <a href="about.html" class="hover_a">About Us</a>
@@ -25,6 +27,22 @@
         </div>
         </div>
     </div>
+    <!-- top if size is smaller then 850 px ------------------------------------>
+    <nav id="nav_ham" class="nav_ham">
+        <img src="photos/logo.png" alt="" class="logo" id="logo_m">
+        <ul class="navlinks">
+            <li><a href="main.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="help.html">Contact</a></li>
+            <li ><a href="" id="search_now_ham">Search</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1" draggable="true"></div>
+            <div class="line2" draggable="true"></div>
+            <div class="line3" draggable="true"></div>
+        </div>
+    </nav>
+    <!-- search system rexxpect to top ---------------------------------- -->
     <div class="search" id="search">
         <div class="search_text" id="search_text">
             <img src="photos/search.svg" class="search_icon_inp" alt="" srcset="">
@@ -64,15 +82,18 @@
             <img src="photos/close.png" id="close_icon_inp" class="close_icon_inp" alt="" srcset="">
         </div>
     </div>
+    <!-- side social media links---------------------------------------------- -->
     <div class="clip" id="social">
         <a href="https://www.instagram.com/invites/contact/?i=vcd3ob07f347&utm_content=43fmjm3" class="link_social" target="_blank"><img src="photos/instagram.png" alt="" class="image_social"></a>
         <a href="https://www.facebook.com/aman.kanojiya.792303" class="link_social" target="_blank"><img src="photos/facebook.png" alt="" class="image_social"></a>
         <a href="https://www.linkedin.com/in/aman-kanojiya-782263188" class="link_social" target="_blank"><img src="photos/linkedin.png" alt="" class="image_social"></a>
     </div>
+    <!-- main screen ------------------------------------------------------ -->
     <div class="main" id="main">
         <h1 id="main_text">Awesome Gaming Website</h1>
     </div>
     <!-- <div class="check"></div> -->
+    <!-- new game section----------------------------------------------------- -->
 <div id="growmore">
     <div class="game_glass">
         <h3 class="heading_game_glass">NEW</h3>
@@ -99,6 +120,7 @@
         </div>
     </div>
 </div>
+<!-- trensing game section ------------------------------------------------------ -->
     <div class="game_glass">
         <h3 class="heading_game_glass">Trending</h3>
         <div class="border_bottom"></div>
@@ -126,6 +148,7 @@
         </div>
     </div>
 </div>
+<!-- only for authnetic user------------------------------------------------------- -->
     <div id="auth_user">
         <div class="background_gamefill">
             <div class="auth tilt" id="addgame">
@@ -133,8 +156,7 @@
         </div>
     </div>
 
-
-
+    <!-- footer section -------------------------------------------------------- -->
 <div id="logout_on" class="button" style="margin-top: 50px; color: white; cursor: pointer;" onclick="logout_l()">LOG OUT </div>
 <footer class="footer" id="main_footer">
     <div id="sec-1" class="sec">
@@ -228,4 +250,5 @@ Copyright © 2021 All rights reserved | This template is made with <a href="#" t
 </script>
 <script src="js/search.js"></script>
 <script src="js/loader.js"></script>
+<script src="js/nav.js"></script>
 </html>

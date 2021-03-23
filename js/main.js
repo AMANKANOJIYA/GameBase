@@ -104,10 +104,10 @@ slider.forEach((slider)=>{
 })
 // add.------ game for admin-------------------
 function addGame(){
-    let link=document.getElementById("addgame_link").value;
-    let name=document.getElementById("addgame_name").value;
-    let image_link=document.getElementById("addgame_imagelink").value;
-    let desc=document.getElementById("addgame_description").value;
+    let link=document.getElementById("addgame_link").value.replace(/<[^>]*>?/gm," ");
+    let name=document.getElementById("addgame_name").value.replace(/<[^>]*>?/gm," ");
+    let image_link=document.getElementById("addgame_imagelink").value.replace(/<[^>]*>?/gm," ");
+    let desc=document.getElementById("addgame_description").value.replace(/<[^>]*>?/gm," ");
     var postListRef = firebase.database().ref('GameBase');
     var newPostRef = postListRef.push();
       newPostRef.set({

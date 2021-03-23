@@ -1,0 +1,139 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+nav{
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background: rgba(0, 0, 0, 0.123);
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    font-family: sans-serif;
+}
+.navlinks{
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+}
+.navlinks li{
+    list-style: none;
+}
+.navlinks a{
+    color: rgb(256, 256, 256);
+    text-decoration: none;
+    letter-spacing: 3px ;
+    font-weight: bold;
+    font-size: 16px;
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+.burger div{
+    width: 25px;
+    height: 5px;
+    background-color: white;
+    margin: 3px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+.logo{
+    max-height: 120px;
+    max-width: 120px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: rgba(0, 0, 0, 0.123);
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    transform: skewX(2px);
+}
+@media screen and (max-width:800px){
+    
+}
+@media screen and (max-width:850px){
+    .logo {
+        max-height: 70px;
+        max-width: 70px;
+    }
+    .navlinks{
+        width: 40%;
+    }
+    nav{
+        display: flex;
+        width: 100%;
+        z-index: 1;
+        position: fixed;
+        top: 0;
+    }
+    .navlinks a{
+        font-size: 18px;
+    }
+    .burger{
+        display: block;
+    }
+    body{
+        overflow-x: hidden;
+    }
+    .navlinks{
+        /* z-index: 100; */
+        position: absolute;
+        right: 0px;
+        /* height: 50vh; */
+        height: 70vh;
+        top: 8vh;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        background: rgb(0 0 0 / 58%);
+        backdrop-filter: blur( 5.5px );
+        transform: translateX(100%);
+        transition:0.5s ease;
+        animation: ham_show 0.5s ease-in-out forwards;
+        border-radius: 10px;
+    }
+    .navlinks li{
+        opacity: 0;
+    }
+}
+.nav-active{
+    /* transform: translateX(0%); */
+    display: flex;
+}
+.nav-clip{
+    display: none;
+}
+
+@keyframes ham_show{
+    from{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@keyframes navlinkfade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}

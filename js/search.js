@@ -1,6 +1,7 @@
 // ==Search===========================================================
 let close_icon_inp=document.getElementById("close_icon_inp")
 let search_btn=document.getElementById("search_now")
+let search_now_ham=document.getElementById("search_now_ham")
 let search=document.getElementById("search")
 search_btn.addEventListener("click",()=>{
   console.log("triggered")
@@ -9,6 +10,11 @@ search_btn.addEventListener("click",()=>{
 })
 close_icon_inp.addEventListener("click",()=>{
   search.style.display="none";
+})
+search_now_ham.addEventListener("click",()=>{
+  console.log("triggered")
+  search.style.display="flex";
+  console.log("triggered-in")
 })
 // let search_txt=document.getElementById("search_text_inp")
 // search_txt.addEventListener("input",()=>{

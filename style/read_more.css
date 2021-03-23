@@ -96,6 +96,8 @@
     justify-content: space-evenly;
     align-items: center;
     width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .form{
     height: auto;
@@ -175,3 +177,78 @@
     border-radius: 5px;
 }
 /* --------------scroll----------------- */
+@media only screen and (max-width:1000px){
+    .first a {
+        font-size: 16px;
+    }
+    .comment_block {
+        width: 80%;
+    }
+}
+@media only screen and (max-width:850px){
+    .top{
+        display: none;
+    }
+    .first {
+        display: none;
+    }
+    .second {
+        display: none;
+    }
+    .logo {
+        max-height: 70px;
+        max-width: 70px;
+    }
+    #main_text {
+        margin-bottom: 0px;
+    }
+    .main h1 {
+        font-size: 40px;
+    }
+    .clip {
+        height: 310px;
+        width: 50px;
+        transition: 0.5s ease-in-out;
+    }
+    .image_social {
+        height: 30px;
+        width: 30px;
+    }
+    .heading_game_glass {
+        font-size: 40px;
+    }
+    #main_text {
+    margin-bottom:0px;
+    }
+    .main h1 {
+    font-size: 40px;
+    text-align: center;
+    }
+    .footer .sec {
+        height: 258px;
+    }
+    /* nnnnnnnnnnnnnnnnnnnnnnnnnnnn */
+    .comment_block {
+        width: 90%;
+    }
+    .auth{
+        width: 100%;
+    }
+    .form{
+        width: auto;
+    }
+    .auth_title {
+        font-size: 30px;
+    }
+    .sec div h4{
+        font-size: 20px;
+    }
+    nav {
+        z-index: 3;
+    }
+}
+@media only screen and (max-width:650px){
+    .comment_block {
+        width: 100%;
+    }
+}

@@ -25,10 +25,10 @@ close_error.addEventListener("click",()=>{
 })
 function signup (){
   console.log("it wirks 1")
-    let login_username=document.getElementById("signup_username").value
-    let login_email=document.getElementById("signup_email").value
-    let login_password=document.getElementById("signup_password").value
-    let login_cpassword=document.getElementById("signup_cPassword").value
+    let login_username=document.getElementById("signup_username").value.replace(/<[^>]*>?/gm," ")
+    let login_email=document.getElementById("signup_email").value.replace(/<[^>]*>?/gm," ")
+    let login_password=document.getElementById("signup_password").value.replace(/<[^>]*>?/gm," ")
+    let login_cpassword=document.getElementById("signup_cPassword").value.replace(/<[^>]*>?/gm," ")
     // =========================================================
     var firebaseref=firebase.database().ref("user");
     firebaseref.on("value",(snapshot)=>{

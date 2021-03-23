@@ -53,7 +53,7 @@ function addcomment(){
     firebase.database().ref("user").once("value").then(function(element){
     // comment from element
     let comment=document.getElementById("comment");
-    comment=comment.value;
+    comment=comment.value.replace(/<[^>]*>?/gm," ");
       let data=element.val()
       var postListRef = firebase.database().ref('Comment');
       var newPostRef = postListRef.push();
@@ -73,11 +73,13 @@ function addcomment(){
 }
 
 let some_comment=document.getElementById("some_comment");
+let seemore=document.getElementById("seemore");
 var firebaseref=firebase.database().ref("Comment");
   firebaseref.once("value",(snapshot)=>{
     var data=snapshot.val();
     for (let i in data){
-      if (data[i]["game_id"]==game_id) {
+      let x =0
+      if (data[i]["game_id"]==game_id && x<6) {
         let element=`
         <img src="photos/logo-fullsize.png" alt="" class="user_comment_pic" id="user_comment_pic">
         <div class="content">
@@ -89,11 +91,15 @@ var firebaseref=firebase.database().ref("Comment");
             </div>
         </div>`
         const main_c=document.getElementById("some_comment");
+        if (x>=5){
+          seemore.style.display="flex"
+        }
         var div=document.createElement("div");
         div.className="comment"
         div.id="comment"
         div.innerHTML=element;
         main_c.appendChild(div);
+        x=x+1
       }
     }
   })

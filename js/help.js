@@ -16,10 +16,10 @@ firebase.auth().onAuthStateChanged(function(user) {
   });
   let submit=document.getElementById("submit")  
   submit.addEventListener("click",()=>{
-    var name_=document.getElementById("name").value
-    var email=document.getElementById("email").value
-    var mob_no=document.getElementById("mob_no").value
-    var message=document.getElementById("message").value
+    var name_=document.getElementById("name").value.replace(/<[^>]*>?/gm," ")
+    var email=document.getElementById("email").value.replace(/<[^>]*>?/gm," ")
+    var mob_no=document.getElementById("mob_no").value.replace(/<[^>]*>?/gm," ")
+    var message=document.getElementById("message").value.replace(/<[^>]*>?/gm," ")
     let today = new Date();
     let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();

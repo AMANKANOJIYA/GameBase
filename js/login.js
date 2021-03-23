@@ -25,8 +25,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     error.style.display="none"
   })
 function login (){
-    let login_email=document.getElementById("email").value
-    let login_password=document.getElementById("password").value
+    let login_email=document.getElementById("email").value.replace(/<[^>]*>?/gm," ")
+    let login_password=document.getElementById("password").value.replace(/<[^>]*>?/gm," ")
     
     firebase.auth().signInWithEmailAndPassword(login_email, login_password).then((userCredential) => {
         // Signed in

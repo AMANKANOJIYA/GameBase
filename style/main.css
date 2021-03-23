@@ -247,6 +247,7 @@ body{
     transition: 0.5s;
     z-index: 10;
     padding: 60px 0px;
+    transition: 0.5s ease-in-out;
 }
 .clip:hover{
     box-shadow: -20px 20px 50px rgba(20, 36, 255, 0.562);
@@ -703,66 +704,69 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     }
 }
 @media only screen and (max-width:850px){
+    .top{
+        display: none;
+    }
     .first {
         display: none;
     }
     .second {
         display: none;
     }
-.logo {
-    max-height: 70px;
-    max-width: 70px;
-}
-#main_text {
-    margin-bottom: 0px;
-}
-.main h1 {
+    .logo {
+        max-height: 70px;
+        max-width: 70px;
+    }
+    #main_text {
+        margin-bottom: 0px;
+    }
+    .main h1 {
+        font-size: 40px;
+    }
+    .clip {
+        height: 310px;
+        width: 50px;
+    }
+    .image_social {
+        height: 30px;
+        width: 30px;
+    }
+    .heading_game_glass {
+        font-size: 40px;
+    }
+    .card {
+        max-height: 200px;
+        max-width: 150px;
+    }
+    .main{
+    height: 50vh;
+    }
+    #main_text {
+    margin-bottom:0px;
+    }
+    .main h1 {
     font-size: 40px;
-}
-.clip {
-    height: 310px;
-    width: 50px;
-}
-.image_social {
-    height: 30px;
-    width: 30px;
-}
-.heading_game_glass {
-    font-size: 40px;
-}
-.card {
-    max-height: 200px;
-    max-width: 150px;
-}
-.main{
-height: 50vh;
-}
-#main_text {
- margin-bottom:0px;
-}
-.main h1 {
-font-size: 40px;
-text-align: center;
-}
-#card-1 {
-    margin-left: 0px;
-}
-#sec-3 h4{
-    margin-bottom: 0px;
-}
-#sec-4 h4{
-    margin-bottom: 0px;
-}
-#sec-2 h4{
-    margin-bottom: 0px;
-}
-#sec-1{
-    margin-bottom: 25px;
-}
-#sec-1 h4{
-    margin-bottom: 0px;
-}
-.footer .sec {
-    height: 258px;
-}
+    text-align: center;
+    }
+    #card-1 {
+        margin-left: 0px;
+    }
+    #sec-3 h4{
+        margin-bottom: 0px;
+    }
+    #sec-4 h4{
+        margin-bottom: 0px;
+    }
+    #sec-2 h4{
+        margin-bottom: 0px;
+    }
+    #sec-1{
+        margin-bottom: 25px;
+    }
+    #sec-1 h4{
+        margin-bottom: 0px;
+    }
+    .footer .sec {
+        height: 258px;
+    }
 }
