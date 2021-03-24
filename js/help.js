@@ -14,6 +14,14 @@ firebase.auth().onAuthStateChanged(function(user) {
       window.location.assign("http://127.0.0.1:5500/login.html")
     }
   });
+
+  function error_gen(code,message){
+    let error=document.getElementById("error");
+    let error_text=document.getElementById("error_text");
+    error.style.display="flex";
+    error_text.innerText=code+" :ERROR !! "+message 
+  }
+  
   let submit=document.getElementById("submit")  
   submit.addEventListener("click",()=>{
     var name_=document.getElementById("name").value.replace(/<[^>]*>?/gm," ")

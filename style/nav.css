@@ -28,6 +28,13 @@ nav{
     font-weight: bold;
     font-size: 16px;
 }
+.navlinks li div{
+    color: rgb(256, 256, 256);
+    text-decoration: none;
+    letter-spacing: 3px ;
+    font-weight: bold;
+    font-size: 16px;
+}
 .burger{
     display: none;
     cursor: pointer;

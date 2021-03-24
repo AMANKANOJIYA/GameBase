@@ -64,6 +64,21 @@ body{
 .about h1 span:hover{
     text-shadow: 1px 1px 14px rgb(43 79 255);
 }
+.button{
+    text-decoration: none;
+    display: flex;
+    color: white;
+    background-color: #FE8B04;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 130px;
+    margin-top: 50px;
+    cursor: pointer;
+}
 /* --------------scroll----------------- */
 ::-webkit-scrollbar{
     width: 10px;

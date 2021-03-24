@@ -6,20 +6,21 @@
     <title>GameMain</title>
     <link rel="icon" href="photos/logo.png">
     <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/loader.css">
     <!-- for size---------------------------------- -->
     <link rel="stylesheet" href="style/nav.css">
 </head>
 <body onselectstart="return false">
     <!-- loader part------------------------------------------------------- -->
-    <!-- <div class="preloader" id="preloader">
-        <div class="loader" id="loader"></div></div> -->
+    <div class="preloader" id="preloader">
+        <div class="loader" id="loader"></div></div>
     <!-- top part navigation----------------------------------------------- -->
     <div class="top">
         <div class="first tilt" id="first_m">
             <a href="about.html" class="hover_a">About Us</a>
             <a href="help.html" class="hover_a"> Contact</a>
         </div>
-        <img src="photos/logo.png" alt="" class="logo" id="logo_m">
+        <a href="main.html"><img src="photos/logo.png" alt="" class="logo" id="logo_m"></a>
         <div class="second  tilt" id="second_m">
             <div id="search_now" style="display: flex; cursor: pointer;">
             <img src="photos/search.svg"  class="search_icon">
@@ -29,12 +30,12 @@
     </div>
     <!-- top if size is smaller then 850 px ------------------------------------>
     <nav id="nav_ham" class="nav_ham">
-        <img src="photos/logo.png" alt="" class="logo" id="logo_m">
+        <a href="main.html"><img src="photos/logo.png" alt="" class="logo" id="logo_m"></a>
         <ul class="navlinks">
             <li><a href="main.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="help.html">Contact</a></li>
-            <li ><a href="" id="search_now_ham">Search</a></li>
+            <li  id="search_now_ham"><div>Search</div></li>
         </ul>
         <div class="burger">
             <div class="line1" draggable="true"></div>
@@ -81,6 +82,17 @@
         <div class="close_sea" id="close_sea">
             <img src="photos/close.png" id="close_icon_inp" class="close_icon_inp" alt="" srcset="">
         </div>
+    </div>
+    <!-- edit game block-------------------------------------------------- -->
+    <div class="edit" id="edit">
+        <input type="text" id="editgame_name" placeholder="Name" autocomplete="off" class="input edit_inp">
+        <input type="url" id="editgame_link" placeholder="Game Link" autocomplete="off" class="input edit_inp">
+        <input type="url" id="editgame_imagelink" placeholder="Game Image Link" autocomplete="off" class="input edit_inp">
+        <textarea type="text" id="editgame_description" placeholder="Game Description" cols="30" rows="10" autocomplete="off" class="input edit_inp"></textarea>
+        <div class="edit_btn">
+        <div class="ok_edit button edit_in" id="ok_edit">Edit</div>
+        <div class="cancel_edit button edit_in" id="cancel_edit">Cancel</div>
+    </div>
     </div>
     <!-- side social media links---------------------------------------------- -->
     <div class="clip" id="social">
@@ -133,6 +145,33 @@
                 <div class="game_con">
                     <div class="game_name">
                         MARIO
+                        <div class="admin_edit" id="admin_edit">
+                        <img src="photos/edit.png" alt=""  class="image_edit 01" onclick="edit(this.id)" id="only_admin_icon_edit_1">
+                        <img src="photos/delete.png" alt="" class="image_edit 01"  onclick="delet(this.id)" id="only_admin_icon_del_1">
+                    </div>
+                    </div>
+                    <div class="game_info">
+                        <div class="rate">4.0   rating</div>
+                        <div class="views" style="color: #9d9d9d;"><span style="color: #4025FB; font-weight: 600;">30,300,00</span> Views </div>
+                    </div>
+                    <div class="imp_btn">
+                        <a href="">Play Now</a>
+                        <a href="review.html?game_id=01">Review</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card tilt" id="card-1">
+                <div class="immage_con">
+                    <img src="photos/bg-story.7.jpg" alt="IMAGE NOT FOUND">
+                    <div>TRENDING</div>
+                </div>
+                <div class="game_con">
+                    <div class="game_name">
+                        MARIO
+                        <div class="admin_edit" id="admin_edit">
+                        <img src="photos/edit.png" alt=""  class="image_edit 02" onclick="edit(this.id)" id="only_admin_icon_edit_2">
+                        <img src="photos/delete.png" alt="" class="image_edit 02"  onclick="delet(this.id)" id="only_admin_icon_del_2">
+                    </div>
                     </div>
                     <div class="game_info">
                         <div class="rate">4.0   rating</div>

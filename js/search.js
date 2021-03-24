@@ -3,6 +3,7 @@ let close_icon_inp=document.getElementById("close_icon_inp")
 let search_btn=document.getElementById("search_now")
 let search_now_ham=document.getElementById("search_now_ham")
 let search=document.getElementById("search")
+console.log(search_now_ham,search,search_btn)
 search_btn.addEventListener("click",()=>{
   console.log("triggered")
   search.style.display="flex";

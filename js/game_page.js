@@ -13,6 +13,12 @@ firebase.auth().onAuthStateChanged(function(user) {
       window.location.assign("http://127.0.0.1:5500/login.html")
     }
   });
+  function error_gen(code,message){
+    let error=document.getElementById("error");
+    let error_text=document.getElementById("error_text");
+    error.style.display="flex";
+    error_text.innerText=code+" :ERROR !! "+message 
+  }
 // --------------------data from data base ----------------------------------
   const game_in=document.getElementById("game_in");
   const main=document.getElementById("game_block");

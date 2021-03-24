@@ -1,13 +1,15 @@
-
+console.log("file.in")
 // Function to slide the navbar on click
 const navslide = () => {
     // call elements
+    console.log("function in")
     const burger = document.querySelector(".burger");
     const nav = document.querySelector(".navlinks");
     const navlinks = document.querySelectorAll(".navlinks li");
     const clip=document.getElementById("social")
     // toggle nav
     burger.addEventListener("click", () => {
+        console.log("trigegred")
         nav.classList.toggle("nav-active");
         clip.classList.toggle("nav-clip");
         // animate links

@@ -7,8 +7,8 @@
     <link rel="icon" href="photos/logo.png">
     <link rel="stylesheet" href="style/review.css">
     <link rel="stylesheet" href="style/loader.css">
-        <!-- for size---------------------------------- -->
-        <link rel="stylesheet" href="style/nav.css">
+    <!-- for size---------------------------------- -->
+    <link rel="stylesheet" href="style/nav.css">
 </head>
 <body onselectstart="return false">
     <div class="preloader" id="preloader">
@@ -19,7 +19,7 @@
             <a href="about.html" class="hover_a">About Us</a>
             <a href="help.html" class="hover_a"> Contact</a>
         </div>
-        <img src="photos/logo.png" alt="" class="logo" id="logo_m">
+        <a href="main.html"><img src="photos/logo.png" alt="" class="logo" id="logo_m"></a>
         <div class="second  tilt" id="second_m">
             <div id="search_now" style="display: flex; cursor: pointer;">
             <img src="photos/search.svg"  class="search_icon">
@@ -29,14 +29,14 @@
     </div>
      <!-- top if size is smaller then 850 px ------------------------------------>
      <nav id="nav_ham" class="nav_ham">
-        <img src="photos/logo.png" alt="" class="logo" id="logo_m">
+        <a href="main.html"><img src="photos/logo.png" alt="" class="logo" id="logo_m"></a>
         <ul class="navlinks">
             <li><a href="main.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="help.html">Contact</a></li>
-            <li ><a href="" id="search_now_ham">Search</a></li>
+            <li  id="search_now_ham"><div>Search</div></li>
         </ul>
-        <div class="burger">
+        <div class="burger" >
             <div class="line1" draggable="true"></div>
             <div class="line2" draggable="true"></div>
             <div class="line3" draggable="true"></div>
@@ -82,21 +82,6 @@
             <img src="photos/close.png" id="close_icon_inp" class="close_icon_inp" alt="" srcset="">
         </div>
     </div>
-    <!-- top if size is smaller then 850 px ------------------------------------>
-    <nav id="nav_ham" class="nav_ham">
-        <img src="photos/logo.png" alt="" class="logo" id="logo_m">
-        <ul class="navlinks">
-            <li><a href="main.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="help.html">Contact</a></li>
-            <li ><a href="" id="search_now_ham">Search</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1" draggable="true"></div>
-            <div class="line2" draggable="true"></div>
-            <div class="line3" draggable="true"></div>
-        </div>
-    </nav>
     <div class="clip" id="social">
         <a href="https://www.instagram.com/invites/contact/?i=vcd3ob07f347&utm_content=43fmjm3" class="link_social" target="_blank"><img src="photos/instagram.png" alt="" class="image_social"></a>
         <a href="https://www.facebook.com/aman.kanojiya.792303" class="link_social" target="_blank"><img src="photos/facebook.png" alt="" class="image_social"></a>
@@ -233,7 +218,7 @@ Copyright © 2021 All rights reserved | This template is made with <a href="#" t
 </script>
 <script src="js/jquery-3.5.1.js"></script>
 <script src="js/review.js"></script>
+<script src="js/nav.js"></script>
 <script src="js/loader.js"></script>
 <script src="js/search.js"></script>
-<script src="js/nav.js"></script>
 </html>

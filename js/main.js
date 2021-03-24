@@ -37,7 +37,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   });
 // --------------------data from data base ----------------------------------
   var firebaseref=firebase.database().ref("GameBase");
-  firebaseref.once("value",(snapshot)=>{
+  firebaseref.on("value",(snapshot)=>{
     var data=snapshot.val();
     for (let i in data){
           let element=`<div class="card unselectebal" id="card-${data[i]['Name']}">
@@ -48,6 +48,10 @@ firebase.auth().onAuthStateChanged(function(user) {
           <div class="game_con unselectebal">
               <div class="game_name unselectebal">
               ${data[i]['Name']}
+              <div class="admin_edit" id="admin_edit">
+                        <img src="photos/edit.png" alt=""  class="image_edit ${i}" onclick="edit(this.id)" id="only_admin_icon_${i}">
+                        <img src="photos/delete.png" alt="" class="image_edit ${i}"  onclick="delet(this.id)" id="only_admin_icon_${i}">
+                </div>
               </div>
               <div class="game_info unselectebal">
                   <div class="rate unselectebal">${data[i]['Rate']}   rating</div>
@@ -126,12 +130,58 @@ function addGame(){
 }
 
 // game _plY CLICK inc views 
-const play_now=document.querySelectorAll(".play_now");
-play_now.forEach(element => {
-  element.addEventListener("click",()=>{
-    let link=element.href.split("?")[-1].split("=")[-1];
+// const play_now=document.querySelectorAll(".play_now");
+// play_now.forEach(element => {
+//   element.addEventListener("click",()=>{
+//     let link=element.href.split("?")[-1].split("=")[-1];
+//   })
+// });
+// game delete function--------------------------------------------
+function delet(id){
+      let del_elem=document.getElementById(id);
+      if (confirm("Are You sure you Want to delete This Game")){
+        firebase.database().ref("GameBase/"+del_elem.classList[1]).remove();
+      }
+      else{
+        console.log("nothing")
+      }
+}
+// game Edit function--------------------------------------------
+function edit(id){
+  console.log(id)
+  let edit_elem=document.getElementById(id);
+  console.log(edit_elem.classList)
+      
+      const edit=document.getElementById("edit");
+      edit.style.display="flex"
+      const cancel_edit=document.getElementById("cancel_edit");
+      cancel_edit.addEventListener("click",()=>{
+        edit.style.display="none"
+      })
+      // fill old value of the ffield====================================
+      let editgame_name=document.getElementById("editgame_name");
+      let editgame_link=document.getElementById("editgame_link");
+      let editgame_imagelink=document.getElementById("editgame_imagelink");
+      let editgame_description=document.getElementById("editgame_description");
+      firebase.database().ref("GameBase/"+edit_elem.classList[1]).on("value",function (snapshot){
+        editgame_name.value=snapshot.val().Name
+        editgame_imagelink.value=snapshot.val().image_link
+        editgame_description.value=snapshot.val().description
+        editgame_link.value=snapshot.val().Link
+      });
+
+      // update field===============================================
+      const ok_edit=document.getElementById("cancel_edit");
+      ok_edit.addEventListener("click",()=>{
+        firebase.database().ref("GameBase/"+edit_elem.classList[1]).update({
+        Name:editgame_name.value,
+        image_link:editgame_imagelink.value,
+        description:editgame_description.value,
+        Link:editgame_link.value
+      });
+      edit.style.display="none"
   })
-});
+}
 // vanila tilt shift----------------------------------
 VanillaTilt.init(document.querySelector("#auth_user .background_gamefill #addgame"), {
   max: 10,

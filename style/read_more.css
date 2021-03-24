@@ -246,6 +246,29 @@
     nav {
         z-index: 3;
     }
+    .search_res_game {
+        width: 95%;
+        padding: 5px 70px;
+        margin-top: 10px;
+    }
+    .search_res_game img {
+        height: 40px;
+        width: 40px;
+    }
+    .search_res_game h3 {
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width:560px){
+    .search_res_game {
+        padding: 4px 12px;
+    }
+    .close_icon_inp {
+        right: 37px;
+    }
+    .search_res {
+        width: 75%;
+    }
 }
 @media only screen and (max-width:650px){
     .comment_block {

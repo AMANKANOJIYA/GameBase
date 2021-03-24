@@ -263,6 +263,20 @@ body{
     -webkit-filter: invert(100%); /* Safari/Chrome */
     filter: invert(100%);
 }
+.image_edit{
+    height: 20px;
+    width: 20px;
+    -webkit-filter: invert(100%); /* Safari/Chrome */
+    filter: invert(100%);
+    cursor: pointer;
+}
+.admin_edit{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    min-width: 66px;
+}
+
 .check{
     height: 800px;
     width: 100%;
@@ -516,8 +530,11 @@ body{
     width: 100%;
 }
 .game_name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     color: white;
-    font-size: 26px;
+    font-size: 22px;
     width: 80%;
 }
 .game_info{
@@ -662,6 +679,7 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     height: 45px;
     width: 130px;
     margin-bottom: 50px;
+    cursor: pointer;
 }
 .button_auth div input{
     cursor: pointer;
@@ -691,6 +709,51 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
 #auth_user{
     display: none;
 }
+/* edit -------------------------------------------------- */
+.edit{
+    padding: 4% 20px;
+    min-height: 400px;
+    height: 85%;
+    width: 78%;
+    min-width: 400px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transition: 0.4s;
+    transform: translate(-50%,-50%);
+    z-index: 100000000;
+    background: white;
+    animation: edit_box ease-in-out 1.5s;
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+    background: #ffffff7a;
+}
+.edit_in{
+    margin: 2px 2px;
+}
+.cancel_edit{
+    background: white;
+    color: black;
+}
+.edit_btn{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    min-width: 400px;
+}
+.edit_inp{
+    width: 60%;
+    height: 50px;
+}
+#editgame_description{
+    height: 100px;
+}
+/* animations--------------------------------- */
 @keyframes serch_box{
     0%{
         left: -1000px;
@@ -701,6 +764,18 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
         left: 50%;
         opacity: 1;
         width: 90%;
+    }
+}
+@keyframes edit_box{
+    0%{
+        left: -1000px;
+        opacity: 0;
+        width: 0px;
+    }
+    100%{
+        left: 50%;
+        opacity: 1;
+        width: 78%;
     }
 }
 @media only screen and (max-width:850px){
@@ -768,5 +843,28 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     }
     .footer .sec {
         height: 258px;
+    }
+    .search_res_game {
+        width: 95%;
+        padding: 5px 70px;
+        margin-top: 10px;
+    }
+    .search_res_game img {
+        height: 40px;
+        width: 40px;
+    }
+    .search_res_game h3 {
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width:560px){
+    .search_res_game {
+        padding: 4px 12px;
+    }
+    .close_icon_inp {
+        right: 37px;
+    }
+    .search_res {
+        width: 75%;
     }
 }

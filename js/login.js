@@ -15,8 +15,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     let error=document.getElementById("error");
     let error_text=document.getElementById("error_text");
     error.style.display="flex";
-    error_text.innerText=code+" :ERROR !! "+message
-    
+    error_text.innerText=code+" :ERROR !! "+message 
   }
   let error=document.getElementById("error");
   let close_error=document.getElementById("close_error");
