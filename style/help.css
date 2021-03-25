@@ -312,6 +312,21 @@ body{
     -webkit-filter: invert(100%); /* Safari/Chrome */
     filter: invert(100%);
 }
+.button{
+    text-decoration: none;
+    display: flex;
+    color: white;
+    background-color: #FE8B04;
+    font-family: rog fonts;
+    font-size: 20px;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 130px;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
 /* form ---------------------------------------------- */
 .main_cont h1{
     color: white;

@@ -16,7 +16,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   //geting data from url--------------------------------------
 var url_string = window.location;
 var url = new URL(url_string);
-var game_id = url.searchParams.get("game_id");
+var game_id = url.searchParams.get("game_id").replace(/<[^>]*>?/gm," ");
 
   // add comments alll
   var firebaseref=firebase.database().ref("Comment");

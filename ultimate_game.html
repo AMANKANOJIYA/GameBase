@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Game</title>
+    <link rel="icon" href="photos/logo.png">
+    <link rel="stylesheet" href="style/ultimate_game.css">
+    <link rel="stylesheet" href="style/loader.css">
+    <!-- for size---------------------------------- -->
+    <link rel="stylesheet" href="style/nav.css">
+</head>
+<body onselectstart="return false">
+    <!-- scroll palet---------------------------------- -->
+    <div id="progressbar"></div>
+    <div id="scrollpath"></div>
+    <!-- loader part------------------------------------------------------- -->
+    <div class="preloader" id="preloader">
+        <div class="loader" id="loader"></div></div>
+    <!-- top part navigation----------------------------------------------- -->
+    <div class="top">
+        <a href="main.html"><img src="photos/logo.png" alt="" class="logo" id="logo_m"></a>
+    </div>
+    <!-- top if size is smaller then 850 px ------------------------------------>
+    <nav id="nav_ham" class="nav_ham">
+        <a href="main.html"><img src="photos/logo.png" alt="" class="logo" id="logo_m"></a>
+        <ul class="navlinks">
+            <li><a href="main.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="help.html">Contact</a></li>
+            <li  id="search_now_ham"><div>Search</div></li>
+        </ul>
+        <div class="burger">
+            <div class="line1" draggable="true"></div>
+            <div class="line2" draggable="true"></div>
+            <div class="line3" draggable="true"></div>
+        </div>
+    </nav>
+    <!-- search system rexxpect to top ------------------------------------- -->
+    <div class="search" id="search">
+        <div class="search_text" id="search_text">
+            <img src="photos/search.svg" class="search_icon_inp" alt="" srcset="">
+            <input type="search" name="search" id="search_text_inp" class="search_text_inp" placeholder="Search">
+        </div>
+        <div class="search_res" id="search_res">
+            <div class="search_res_game" id="search_res_game-1">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-2">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-3">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-4">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-5">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-5">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+            <div class="search_res_game" id="search_res_game-5">
+                <img src="photos/bg-story.7.jpg" alt="">
+                <h3>This is name of the game</h3>
+            </div>
+        </div>
+        <div class="close_sea" id="close_sea">
+            <img src="photos/close.png" id="close_icon_inp" class="close_icon_inp" alt="" srcset="">
+        </div>
+    </div>
+    </div>
+    <!-- main screen ------------------------------------------------------ -->
+    <div class="main" id="main">
+        <div class="search_games" id="search_games">
+            <img src="photos/search.svg" class="search_icon_inp" alt="" srcset="">
+            <input type="search" name="search" id="search_text_inp_ult" class="search_text_inp" placeholder="Search">
+        </div>
+        <div class="game_section" id="game_section">
+            <div class="game tilt" id="game-id">
+                <img src="photos/star.png" alt="">
+                <div class="game_name" id="game_name_id">find the game</div>
+            </div>
+            <div class="game tilt" id="game-id">
+                <img src="photos/star.png" alt="">
+                <div class="game_name" id="game_name_id">Mario X 1256</div>
+            </div>
+        </div>
+    </div>
+    <!-- footer section -------------------------------------------------------- -->
+    <div class="ult_btn" id="ult_btn">
+    <div href="#" class="button" id="close_btn">Close</div>
+<!-- <div id="logout_on" class="button" style="color: white; cursor: pointer;" onclick="logout_l()">LOG OUT </div> -->
+</div>
+<div class="copyright_text">
+<p class="copy_text">
+Copyright © 2021 All rights reserved | This template is made with <a href="#" target="_blank">Aman Kanojiya</a></p>
+</div>
+</body>
+<script src="js/vanilla-tilt.js"></script>
+<!-- <script src="js/aos.js"></script> -->
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBAxH0iNVGmQTxx0loEDchJEwrYi11geFY",
+    authDomain: "game-base-4203.firebaseapp.com",
+    projectId: "game-base-4203",
+    storageBucket: "game-base-4203.appspot.com",
+    messagingSenderId: "614367861461",
+    appId: "1:614367861461:web:1bf7c81c661a8632ffa05c",
+    measurementId: "G-FQ3C0PPKPQ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="js/jquery-3.5.1.js"></script>
+<script src="js/ultimate_game.js"></script>
+<script src="js/search.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/nav.js"></script>
+<script type="text/javascript">
+    let progress=document.getElementById("progressbar");
+    let totalheight=document.body.scrollHeight - window.innerHeight;
+    window.onscroll=function(){
+        let progressheight=(window.pageYOffset/totalheight)*100;
+        progress.style.height=progressheight+"%";
+    }
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+        max: 20,
+            speed: 400,
+            glare:true,
+            "max-glare":0.5
+        });
+</script>
+</html>

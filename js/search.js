@@ -5,32 +5,51 @@ let search_now_ham=document.getElementById("search_now_ham")
 let search=document.getElementById("search")
 console.log(search_now_ham,search,search_btn)
 search_btn.addEventListener("click",()=>{
-  console.log("triggered")
   search.style.display="flex";
-  console.log("triggered-in")
 })
 close_icon_inp.addEventListener("click",()=>{
   search.style.display="none";
 })
 search_now_ham.addEventListener("click",()=>{
-  console.log("triggered")
   search.style.display="flex";
-  console.log("triggered-in")
 })
-// let search_txt=document.getElementById("search_text_inp")
-// search_txt.addEventListener("input",()=>{
-//   var firebaseref=firebase.database().ref("GameBase");
-//   firebaseref.on("value",(snapshot)=>{
-//     var data=snapshot.val();
-//     for (let i in data){
-//       if (search_txt in data[i]["Name"]){
-//         console.log(data[i]["Name"])
-//       }
-//     }
-//   })
-//   var ref = firebase.database().ref().child("GameBase");
-// ref.startAt(search_txt.value).once("value").then( function(snapshot) {
-//   console.log(snapshot.val);
-// });
-// // .orderByKey("Name")
-// })
+
+let search_txt=document.getElementById("search_text_inp")
+const main_c=document.getElementById("search_res");
+// add games to ultimate game  stores
+var firebaseref=firebase.database().ref("GameBase");
+firebaseref.on("value",(snapshot)=>{
+  var data=snapshot.val();
+  for (let i in data){
+    let element=`<img src="${data[i]['image_link']}" alt="">
+    <h3>${data[i]['Name']}</h3>`
+    var div=document.createElement("div");
+    div.innerHTML=element;
+    div.className="search_res_game"
+    div.id=`search_res_game-${i}`
+    main_c.appendChild(div);
+  }
+})
+
+// get input element
+let filter_input=document.getElementById("search_text_inp")
+// add event listener
+filter_input.addEventListener("keyup",filtergames);
+
+function filtergames() {
+// get value of input
+let filter_value=document.getElementById("search_text_inp").value.toUpperCase();
+// get names
+let cont=document.getElementById("search_res");
+let name=cont.querySelectorAll(".search_res_game");
+// loop through
+for (let i = 0; i < name.length; i++) {
+  let specific_name = name[i].getElementsByTagName("h3")[0];
+  // if matches
+  if (specific_name.innerHTML.toUpperCase().indexOf(filter_value)>-1) {
+    name[i].style.display="";
+  } else {
+    name[i].style.display="none";
+  }
+}
+}

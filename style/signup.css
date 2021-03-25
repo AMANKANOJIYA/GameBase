@@ -184,6 +184,17 @@ body{
     margin-left: 15px;
     font-weight: 800;
 }
+.new_account_button{
+    text-decoration: none;
+}
+.new_account_button p{
+    font-size: 16px;
+    font-weight: 500;
+    color: black; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 /* animation  */
 @keyframes fadeout{

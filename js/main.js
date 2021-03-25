@@ -1,3 +1,20 @@
+
+// --------------fade in animation for main-----------
+let text=document.getElementById("main_text");
+$(document).ready(function(){ 
+    $(window).scroll(function(){ 
+        $('#main_text').css("opacity", 1- $(window).scrollTop() / 400) 
+        $("#main_text").css("margin-top",($(window).scrollTop()/400)*500)
+        // console.log($(window).scrollTop()/400)*500 , 1- $(window).scrollTop() / 400)
+    }) 
+})
+// vanila tilt shift----------------------------------
+VanillaTilt.init(document.querySelector("#auth_user .background_gamefill #addgame"), {
+  max: 10,
+  speed: 400,
+  glare:true,
+  "max-glare":0.6
+});
 // signout system----------------------------------------------
 function logout_l(){
     firebase.auth().signOut().then(() => {
@@ -70,14 +87,6 @@ firebase.auth().onAuthStateChanged(function(user) {
       main_c.appendChild(div);
     }
   })
-// --------------fade in animation for main-----------
-let text=document.getElementById("main_text");
-  $(document).ready(function(){ 
-    $(window).scroll(function(){ 
-        $('#main_text').css("opacity", 1- $(window).scrollTop() / 400) 
-        $("#main_text").css("margin-top",($(window).scrollTop()/400)*500)
-    }) 
-}) 
 // scroll-----took help form codepen--------------------------------------------
 const slider = document.querySelectorAll('.main_container');
 let isDown = false;
@@ -182,10 +191,4 @@ function edit(id){
       edit.style.display="none"
   })
 }
-// vanila tilt shift----------------------------------
-VanillaTilt.init(document.querySelector("#auth_user .background_gamefill #addgame"), {
-  max: 10,
-  speed: 400,
-  glare:true,
-  "max-glare":0.6
-});
+

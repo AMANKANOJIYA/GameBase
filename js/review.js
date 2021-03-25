@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 //geting data from url--------------------------------------
 var url_string = window.location;
 var url = new URL(url_string);
-var game_id = url.searchParams.get("game_id");
+var game_id = url.searchParams.get("game_id").replace(/<[^>]*>?/gm," ");
 document.getElementById("seemore").href=`http://127.0.0.1:5500/read_more.html?game_id=${game_id}`
 // data to change in the give thoings-------------------------
 const game_image=document.getElementById("game_image");

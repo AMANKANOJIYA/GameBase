@@ -39,7 +39,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   // url extractor--------------------------------------------------------
 var url_string = window.location;
 var url = new URL(url_string);
-var game_id = url.searchParams.get("game_id");
+var game_id = url.searchParams.get("game_id").replace(/<[^>]*>?/gm," ");
 // screen changer==============================================
 var firebaseref=firebase.database().ref("GameBase");
   firebaseref.once("value",(snapshot)=>{
