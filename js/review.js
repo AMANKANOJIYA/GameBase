@@ -11,7 +11,8 @@ firebase.auth().onAuthStateChanged(function(user) {
       // User is signed in.
     } else {
       // No user is signed in.
-      window.location.assign("http://127.0.0.1:5500/login.html")
+      // window.location.assign("http://127.0.0.1:5500/login.html")
+      window.location.assign("login.html")
     }
   });
 //geting data from url--------------------------------------
@@ -67,6 +68,7 @@ function addcomment(){
           user:data[key]["user_name"]
         });
         console.log(dateTime,comment,game_id,data[key]["user_name"])
+        location.reload();
         }
       }
     })

@@ -53,40 +53,50 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
   });
 // --------------------data from data base ----------------------------------
+
+// content creator function
+function content_creator(cont,tag){
   var firebaseref=firebase.database().ref("GameBase");
   firebaseref.on("value",(snapshot)=>{
     var data=snapshot.val();
+    var x=0;
     for (let i in data){
-          let element=`<div class="card unselectebal" id="card-${data[i]['Name']}">
-          <div class="immage_con unselectebal">
-              <img src="${data[i]['image_link']}" alt="IMAGE NOT FOUND">
-              <div>${data[i]['Tag']}</div>
-          </div>
-          <div class="game_con unselectebal">
-              <div class="game_name unselectebal">
-              ${data[i]['Name']}
-              <div class="admin_edit" id="admin_edit">
-                        <img src="photos/edit.png" alt=""  class="image_edit ${i}" onclick="edit(this.id)" id="only_admin_icon_${i}">
-                        <img src="photos/delete.png" alt="" class="image_edit ${i}"  onclick="delet(this.id)" id="only_admin_icon_${i}">
-                </div>
+      if (data[i]["Tag"]==tag && x<10){
+        let element=`<div class="card unselectebal" id="card-${data[i]['Name']}">
+        <div class="immage_con unselectebal">
+            <img src="${data[i]['image_link']}" alt="IMAGE NOT FOUND">
+            <div>${data[i]['Tag']}</div>
+        </div>
+        <div class="game_con unselectebal">
+            <div class="game_name unselectebal">
+            ${data[i]['Name']}
+            <div class="admin_edit" id="admin_edit">
+                      <img src="photos/edit.png" alt=""  class="image_edit ${i}" onclick="edit(this.id)" id="only_admin_icon_${i}">
+                      <img src="photos/delete.png" alt="" class="image_edit ${i}"  onclick="delet(this.id)" id="only_admin_icon_${i}">
               </div>
-              <div class="game_info unselectebal">
-                  <div class="rate unselectebal">${data[i]['Rate']}   rating</div>
-                  <div class="views unselectebal" style="color: #9d9d9d;"><span style="color: #4025FB; font-weight: 600;">${data[i]['Views']}</span> Views </div>
-              </div>
-              <div class="imp_btn unselectebal">
-                  <a href="game_page.html?game_id=${i}" class="play_now">Play Now</a>
-                  <a href="review.html?game_id=${i}">Review</a>
-              </div>
-          </div>
-      </div>`
-      const main_c=document.getElementById("main_container");
-      var div=document.createElement("div");
-      div.className="tilt";
-      div.innerHTML=element;
-      main_c.appendChild(div);
+            </div>
+            <div class="game_info unselectebal">
+                <div class="rate unselectebal">${data[i]['Rate']}   rating</div>
+                <div class="views unselectebal" style="color: #9d9d9d;"><span style="color: #4025FB; font-weight: 600;">${data[i]['Views']}</span> Views </div>
+            </div>
+            <div class="imp_btn unselectebal">
+                <a href="game_page.html?game_id=${i}" class="play_now">Play Now</a>
+                <a href="review.html?game_id=${i}">Review</a>
+            </div>
+        </div>
+    </div>`
+    const main_c=document.getElementById(cont);
+    var div=document.createElement("div");
+    div.className="tilt";
+    div.innerHTML=element;
+    main_c.appendChild(div);
+    x+=1
+      }
     }
   })
+}
+content_creator("main_container_new","NEW")
+content_creator("main_container_trend","TRENDING")
 // scroll-----took help form codepen--------------------------------------------
 const slider = document.querySelectorAll('.main_container');
 let isDown = false;
@@ -136,6 +146,7 @@ function addGame(){
     name=""
     image_link=""
     desc=""
+    location.reload();
 }
 
 // game _plY CLICK inc views 
@@ -150,9 +161,7 @@ function delet(id){
       let del_elem=document.getElementById(id);
       if (confirm("Are You sure you Want to delete This Game")){
         firebase.database().ref("GameBase/"+del_elem.classList[1]).remove();
-      }
-      else{
-        console.log("nothing")
+        location.reload();
       }
 }
 // game Edit function--------------------------------------------
@@ -189,6 +198,7 @@ function edit(id){
         Link:editgame_link.value
       });
       edit.style.display="none"
+      location.reload();
   })
 }
 

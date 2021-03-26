@@ -1,22 +1,24 @@
 const button_login=document.getElementById("login_btn");
-
+function error_gen(code,message){
+  let error=document.getElementById("error");
+  let error_text=document.getElementById("error_text");
+  error.style.display="flex";
+  error_text.innerText=code+" :ERROR !! "+message 
+}
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
       console.log("this is loged in")
-      window.location.assign("http://127.0.0.1:5500/main.html")
+      // window.location.assign("http://127.0.0.1:5500/main.html")
+      window.location.assign("main.html")
     } else {
       // No user is signed in.
-      console.log("this is jfehafaljdslk in")
+      console.log("this is an error")
     }
   });
-  function error_gen(code,message){
-    let error=document.getElementById("error");
-    let error_text=document.getElementById("error_text");
-    error.style.display="flex";
-    error_text.innerText=code+" :ERROR !! "+message 
-  }
+
+
   let error=document.getElementById("error");
   let close_error=document.getElementById("close_error");
   close_error.addEventListener("click",()=>{

@@ -1,3 +1,13 @@
+  // close=====================================================
+  const close=document.getElementById("close");
+  close.addEventListener("click",()=>{
+    window.history.back();
+  })
+  const review=document.getElementById("review");
+ review.addEventListener("click",()=>{
+   console.log("this was triggered")
+    window.location.assign(`review.html?game_id=${game_id}`)
+  })
 // signout system----------------------------------------------
 function logout_l(){
     firebase.auth().signOut().then(() => {
@@ -50,12 +60,4 @@ var firebaseref=firebase.database().ref("GameBase");
       }
     }
   })
-  // close=====================================================
-  const close=document.getElementById("close");
-  close.addEventListener("click",()=>{
-    window.history.back();
-  })
-  const review=document.getElementById("review");
- review.addEventListener("click",()=>{
-    window.location.assign(`review.html?game_id=${game_id}`)
-  })
+

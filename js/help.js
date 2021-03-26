@@ -8,7 +8,14 @@ function logout_l(){
 // auth check if user sign up or loged in
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      // User is signed in.
+      var firebaseref=firebase.database().ref("Admin");
+      firebaseref.once("value",(snapshot)=>{
+        let email=snapshot.val()["email"]
+        if (user.email==email){
+          document.getElementById("main_admin").style.display="block";
+          user_admin()
+        }
+      })
     } else {
       // No user is signed in.
       window.location.assign("http://127.0.0.1:5500/login.html")
@@ -53,4 +60,48 @@ firebase.auth().onAuthStateChanged(function(user) {
     message=""
     console.log(name_,email,mob_no,message)
   })
-  
+  // user_auth -------------------------------------------------------
+   function user_admin(){
+    //  creating table element ----------------------------------
+    let element1=`<thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile No</th>
+        <th>Message</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    </tbody>`
+    const main_c=document.getElementById("main_admin");
+    var div=document.createElement("table");
+    div.className="table";
+    div.innerHTML=element1;
+    main_c.appendChild(div);
+
+    // adding data to table using dynamic addding---------------------
+    var firebaseref=firebase.database().ref("contact");
+    firebaseref.on("value",(snapshot)=>{
+      var data=snapshot.val();
+      for (let i in data){
+        let element2=`<td class="name" data-lable="Name" id="${i}">${data[i]["name"]}</td>
+        <td data-lable="Email">${data[i]["email"]}</td>
+        <td data-lable="Monile No">${data[i]["mobile_no"]}</td>
+        <td class="message" data-lable="Message">${data[i]["message"]}</td>
+        <td  data-lable="Delete"><img src="photos/delete.png" alt="" class="image_edit_cont ${i}"  onclick="delet_cont(this.id)" id="only_admin_icon_del_${i}"></td>`
+        const tbody=document.getElementById("tbody");
+        var div=document.createElement("tr");
+        div.innerHTML=element2;
+        tbody.appendChild(div);
+      }
+    })
+   }
+
+function delet_cont(id) {
+  let del_elem=document.getElementById(id);
+  if (confirm("Do you realy want to delete this Query ??")){
+    firebase.database().ref("contact/"+del_elem.classList[1]).remove();
+    location.reload();
+  }
+}
