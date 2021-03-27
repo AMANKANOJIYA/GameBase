@@ -9,48 +9,55 @@
     <link rel="stylesheet" href="style/user.css">
 </head>
 <body onselectstart="return false">
+    <!-- scroll palet---------------------------------- -->
+    <div id="progressbar"></div>
+    <div id="scrollpath"></div>
+    <!-- containners -->
+    <div class="top" id="top">
+        <a href="main.html">
+        <img src="photos/logo.png" alt="" class="logo" id="logo">
+        <h1>GAMEALINE</h1>
+    </a>
+    </div>
     <div class="container">
         <div class="box" id="box-1">
-            <div class="content">
-                <!-- <h2>01</h2>
-                <h3>Service One</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rem fuga debitis, cupiditate
+                <img src="photos/logo.png" alt="" id="user_image">
+        </div>
+        <div class="box">
+            <div class="content" id="box-2">
+                <h2>GB</h2>
+                <h3 id="name_user">Ravi Raj</h3>
+                <p id="bio_user" class="bio_user">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rem fuga debitis, cupiditate
                     numquam corrupti </p>
-                <a href="#">Read More</a> -->
+                <a href="#"><img src="photos/edit.png" alt="">
+                </a>
             </div>
         </div>
 
         <div class="box">
             <div class="content">
-                <!-- <h2>02</h2>
-                <h3>Service Two</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rem fuga debitis, cupiditate
-                    numquam corrupti </p>
-                <a href="#">Read More</a> -->
             </div>
         </div>
 
-        <div class="box">
-            <div class="content">
-                <!-- <h2>03</h2>
-                <h3>Service Three</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rem fuga debitis, cupiditate
+        <div class="box" id="box-4">
+            <div class="content" id="content_use">
+                <!-- <h2>04</h2> -->
+                <h3>FAQ's</h3>
+                <div class="question_block" id="question_block-1">
+                <p id="question" class="question"><span class="symbols">Q></span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rem fuga debitis, cupiditate
+                    numquam corrupti <span class="symbols">?</span></p>
+                <p id="answer" class="answer"><span class="symbols">Ans.</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rem fuga debitis, cupiditate
                     numquam corrupti </p>
-                <a href="#">Read More</a> -->
+                    <hr>
+                </div>
             </div>
         </div>
-
-        <div class="box">
-            <div class="content">
-                <!-- <h2>04</h2>
-                <h3>Service Four</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rem fuga debitis, cupiditate
-                    numquam corrupti </p>
-                <a href="#">Read More</a> -->
-            </div>
-        </div>
-
     </div>
+
+    <div class="copyright_text">
+        <p class="copy_text">
+        Copyright © 2021 All rights reserved | This template is made with <a href="#" target="_blank">Aman Kanojiya</a></p>
+        </div>
 </body>
 <script src="js/vanilla-tilt.js"></script>
 <!-- <script src="js/aos.js"></script> -->
@@ -82,5 +89,21 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+</script>
+<script src="js/vanilla-tilt.js"></script>
+<script src="js/user.js"></script>
+<script>
+        VanillaTilt.init(document.querySelectorAll(".tilt"), {
+        max: 5,
+            speed: 400,
+            glare:true,
+            "max-glare":0.3
+        });
+    let progress=document.getElementById("progressbar");
+    let totalheight=document.body.scrollHeight - window.innerHeight;
+    window.onscroll=function(){
+        let progressheight=(window.pageYOffset/totalheight)*100;
+        progress.style.height=progressheight+"%";
+    }
 </script>
 </html>

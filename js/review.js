@@ -26,6 +26,8 @@ const review_num=document.getElementById("review_num");
 const views_num=document.getElementById("views_num");
 const game_name=document.getElementById("game_name");
 const description=document.getElementById("description_text");
+const rate_value=document.getElementById("rate_value");
+const rate_progress=document.getElementById("rate_progress");
 var firebaseref=firebase.database().ref("GameBase");
   firebaseref.once("value",(snapshot)=>{
     var data=snapshot.val();
@@ -37,6 +39,11 @@ var firebaseref=firebase.database().ref("GameBase");
         views_num.innerText=data[i]["Views"]
         description.innerText=data[i]["description"]
         review_num.innerText=data[i]["Rate"]
+        rate_value.innerText=data[i]["Rate"]
+        console.log(rate_progress.style.width)
+        rate_progress.style.width=`${(parseFloat(data[i]["Rate"])/5)*100}%`
+        console.log((parseFloat(data[i]["Rate"])/5)*100)
+        console.log(rate_progress.style.width)
       }
     }
   })

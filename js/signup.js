@@ -3,11 +3,9 @@ const button_login=document.getElementById("login_btn");
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      console.log("this is loged in")
       window.location.assign("http://127.0.0.1:5500/main.html")
     } else {
       // No user is signed in.
-      console.log("this is jfehafaljdslk in")
     }
   });
 
@@ -29,10 +27,11 @@ function signup (){
     let login_email=document.getElementById("signup_email").value.replace(/<[^>]*>?/gm," ")
     let login_password=document.getElementById("signup_password").value.replace(/<[^>]*>?/gm," ")
     let login_cpassword=document.getElementById("signup_cPassword").value.replace(/<[^>]*>?/gm," ")
+    console.log(login_username,login_password,login_email)
     // =========================================================
-    var firebaseref=firebase.database().ref("user");
-    firebaseref.on("value",(snapshot)=>{
-      var data=snapshot.val();
+    // var firebaseref=firebase.database().ref("user");
+    // firebaseref.on("value",(snapshot)=>{
+    //   var data=snapshot.val();
       // for loop to check users
       if (login_password==login_cpassword) {
         firebase.auth().createUserWithEmailAndPassword(login_email, login_password)
@@ -68,6 +67,6 @@ function signup (){
         login_password=""
         login_cpassword=""
       }
-    })
+    // })
     // ========================================================
 }
