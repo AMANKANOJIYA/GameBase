@@ -1,9 +1,9 @@
-// back to previous page
+// back to previous page------------------------------------------------------------------
 const close=document.getElementById("close_btn");
 close.addEventListener("click",()=>{
   window.history.back();
 })
-// signout system----------------------------------------------
+// signout system-------------------------------------------------------------------------
 function logout_l(){
     firebase.auth().signOut().then(() => {
     window.location.assign("http://127.0.0.1:5500/login.html")
@@ -18,7 +18,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       window.location.assign("http://127.0.0.1:5500/login.html")
     }
   });
-// add games to ultimate game  stores
+// add games to ultimate game  stores----------------------------------------------------------
   var firebaseref=firebase.database().ref("GameBase");
   firebaseref.on("value",(snapshot)=>{
     var data=snapshot.val();
@@ -29,12 +29,33 @@ firebase.auth().onAuthStateChanged(function(user) {
       </div></a>`
       const main_c=document.getElementById("game_section");
       var div=document.createElement("div");
+      // div.className="tilt"
       div.innerHTML=element;
       main_c.appendChild(div);
     }
   })
-
-  // get input element
+// To add filter of tags---------------------------------------------------------------
+function filter_by_tag(tag){
+  var firebaseref=firebase.database().ref("GameBase");
+  firebaseref.on("value",(snapshot)=>{
+    var data=snapshot.val();
+    for (let i in data){
+      let name=document.getElementById(`game-${i}`).parentElement;
+      console.log(data[i]["Tag"].toUpperCase(),tag.toUpperCase())
+      if (data[i]["Tag"].toUpperCase()==tag.toUpperCase()){
+        name.style.display="";
+      }
+      else{
+        console.log(name[i])
+        name.style.display="none";
+      }
+  }
+  })
+};
+document.getElementById("category").addEventListener("change",()=>{
+  filter_by_tag(document.getElementById("category").value);
+})
+// get input element--------------------------------------------------------------------
 let filter_input=document.getElementById("search_text_inp_ult")
 // add event listener
 filter_input.addEventListener("keyup",filtergames);
@@ -44,7 +65,7 @@ function filtergames() {
   let filter_value=document.getElementById("search_text_inp_ult").value.toUpperCase();
   // get names
   let cont=document.getElementById("game_section");
-  let name=cont.querySelectorAll(".game");
+  let name=document.querySelectorAll(".game");
   // loop through
   for (let i = 0; i < name.length; i++) {
     let specific_name = name[i].getElementsByTagName("div")[0];
@@ -56,11 +77,8 @@ function filtergames() {
     }
   }
 }
-VanillaTilt.init(document.querySelectorAll(".tilt"), {
-  max: 40,
-      speed: 400,
-      glare:true,
-      "max-glare":0.5
-  });
+// tilt----------------------------------------------------------------------
+
+
 
 

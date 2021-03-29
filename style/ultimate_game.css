@@ -340,7 +340,8 @@ body::after{
     margin-right: auto;
     padding: 40px 40px;
     margin-top: 80px;
-    width: 35%;
+    width: 40%;
+
 }
 .search_text_inp {
     border: 2px #ffffff solid;
@@ -350,6 +351,19 @@ body::after{
 }
 .search_icon_inp {
     filter: invert(1);
+}
+/* filter======================================= */
+.category {
+    /* height: 30px; */
+    /* width: 100px; */
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 10px;
+    color: white;
+    background-color:#0B111F;
+    /* filter: blur(5.5px); */
+    border: 2px white solid;
+    border-radius: 13px;
 }
 /* animations--------------------------------- */
 @keyframes animate_scroll{

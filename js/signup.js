@@ -45,7 +45,7 @@ function signup (){
               var errorMessage = error.message;
               error_gen(errorCode,errorMessage);
           });
-          firebase.database().ref('user/' + login_username).set({
+          firebase.database().ref('user/'+login_username).set({
             email:login_email,
             profile_pic:"../photos/base.png",
             user_name:login_username

@@ -179,7 +179,66 @@ body{
     height: 30px;
     width: 30px;
 }
+.edit_bio{
+    position: relative;
+    /* margin: 20px 0 0 ; */
+    padding: 27px 39px;
+    text-decoration: none;
+    /* border: 1px solid #fff; */
+    display: inline-block;
+    color: #fff;
+    transition: 0.5s;
+    transform: translateY(-40px);
+    opacity: 0;
+    visibility: hidden;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+.button{
+    text-decoration: none;
+    display: flex;
+    color: white;
+    /* background-color: #FE8B04; */
+    background: linear-gradient(
+        315deg
+        ,#89ff00,#00bcd4);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 110px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button_can{
+    text-decoration: none;
+    display: flex;
+    color: black;
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 110px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
 .box .content a img{
+    filter: invert(1);
+    height: 30px;
+    width: 30px;
+}
+.edit_bio img{
     filter: invert(1);
     height: 30px;
     width: 30px;
@@ -190,6 +249,14 @@ body{
     visibility: visible;
 }
 .box .content a:hover img{
+    filter: invert(0.8);
+}
+.box:hover .content .edit_bio{
+    transform: translateY(-10px);
+    opacity: 1;
+    visibility: visible;
+}
+.box .content .edit_bio:hover img{
     filter: invert(0.8);
 }
 .question_block{
@@ -265,6 +332,18 @@ body{
     text-decoration: none;
     color: red;
     font-weight: 500;
+}
+.bio_user_inp{
+    width: 100%;
+    height: 80px;
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+    padding-left: 20px;
+    border-radius: 8px;
+    border: 2px white solid;
+    background: transparent;
+    font-family: system-ui;
 }
 @keyframes animate_scroll{
     0%,100%{

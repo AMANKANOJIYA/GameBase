@@ -1,3 +1,4 @@
+
 // signout system----------------------------------------------
 function logout_l(){
     firebase.auth().signOut().then(() => {
@@ -17,7 +18,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 //data of user filter ====================================================
 let user_image=document.getElementById("user_image")
 let name_user=document.getElementById("name_user")
-let bio_user=document.getElementById("bio_user")
+// let bio_user=document.getElementById("bio_user")
 var firebaseref=firebase.database().ref("Admin");
 firebaseref.on("value",(snapshot)=>{
     console.log("this is working")
@@ -48,4 +49,44 @@ firebaseref.on("value",(snapshot)=>{
         div.innerHTML=element;
         main_c.appendChild(div);
     }
+})
+// liu genux pirate
+// edit bio---------------------------------------------------
+let edit_bio =document.getElementById("edit_bio");
+let bio_user =document.getElementById("bio_user");
+edit_bio.addEventListener("click",()=>{
+    const main_c=document.getElementById("box-2")
+    let  input_=document.createElement("textarea")
+    input_.type="text";
+    input_.value=bio_user.innerText
+    input_.className="bio_user_inp"
+    let  button_=document.createElement("button")
+    button_.className="button"
+    button_.id="Edit"
+    button_.innerText="Edit"
+    let  button_can=document.createElement("button")
+    button_can.className="button_can"
+    button_can.id="button_can"
+    button_can.innerText="Cancel"
+    main_c.appendChild(input_);
+    main_c.appendChild(button_);
+    main_c.appendChild(button_can);
+    edit_bio.style.display="none"
+    bio_user.style.display="none"
+    document.getElementById("button_can").addEventListener("click",()=>{
+        if (input_.value=bio_user.innerText){
+            edit_bio.style.display=""
+            bio_user.style.display=""
+            input_.style.display="none";
+            button_.style.display="none";
+            button_can.style.display="none";
+            location.reload();
+        }
+    })
+    document.getElementById("Edit").addEventListener("click",()=>{
+        firebase.database().ref('user/'+document.getElementById("name_user")).update({
+            bio:input_.value,
+          });
+        location.reload();
+    })
 })

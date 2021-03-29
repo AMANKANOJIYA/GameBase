@@ -149,13 +149,19 @@ function addGame(){
     location.reload();
 }
 
-// game _plY CLICK inc views 
-// const play_now=document.querySelectorAll(".play_now");
-// play_now.forEach(element => {
-//   element.addEventListener("click",()=>{
-//     let link=element.href.split("?")[-1].split("=")[-1];
-//   })
-// });
+// game _plY CLICK inc views --------------------------------------------------------
+const play_now=document.querySelectorAll(".play_now");
+play_now.forEach(element => {
+  element.addEventListener("click",()=>{
+    let link=element.href.split("?")[1].split("=")[1];
+    firebase.database().ref("GameBase/"+link).on("value",function (snapshot){
+      let view_s=snapshot.val().Views+1
+     firebase.database().ref("GameBase/"+link).update({
+       Views:view_s+1
+   });
+   });
+  })
+});
 // game delete function--------------------------------------------
 function delet(id){
       let del_elem=document.getElementById(id);

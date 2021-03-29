@@ -47,30 +47,6 @@
                 <img src="photos/bg-story.7.jpg" alt="">
                 <h3>This is name of the game</h3>
             </div>
-            <div class="search_res_game" id="search_res_game-2">
-                <img src="photos/bg-story.7.jpg" alt="">
-                <h3>This is name of the game</h3>
-            </div>
-            <div class="search_res_game" id="search_res_game-3">
-                <img src="photos/bg-story.7.jpg" alt="">
-                <h3>This is name of the game</h3>
-            </div>
-            <div class="search_res_game" id="search_res_game-4">
-                <img src="photos/bg-story.7.jpg" alt="">
-                <h3>This is name of the game</h3>
-            </div>
-            <div class="search_res_game" id="search_res_game-5">
-                <img src="photos/bg-story.7.jpg" alt="">
-                <h3>This is name of the game</h3>
-            </div>
-            <div class="search_res_game" id="search_res_game-5">
-                <img src="photos/bg-story.7.jpg" alt="">
-                <h3>This is name of the game</h3>
-            </div>
-            <div class="search_res_game" id="search_res_game-5">
-                <img src="photos/bg-story.7.jpg" alt="">
-                <h3>This is name of the game</h3>
-            </div>
         </div>
         <div class="close_sea" id="close_sea">
             <img src="photos/close.png" id="close_icon_inp" class="close_icon_inp" alt="" srcset="">
@@ -82,6 +58,14 @@
         <div class="search_games" id="search_games">
             <img src="photos/search.svg" class="search_icon_inp" alt="" srcset="">
             <input type="search" name="search" id="search_text_inp_ult" class="search_text_inp" placeholder="Search">
+            <select name="category" id="category" class="category">
+                <option value="all" class="options">All</option>
+                <option value="new" class="options">New</option>
+                <option value="trending" class="options">Trending</option>
+                <option value="car" class="options">Car</option>
+                <option value="bubble" class="options">Bubble</option>
+                <option value="creative" class="options">Creative</option>
+            </select>
         </div>
         <div class="game_section" id="game_section">
             <div class="game tilt" id="game-id">
@@ -147,11 +131,20 @@ Copyright © 2021 All rights reserved | This template is made with <a href="#" t
         let progressheight=(window.pageYOffset/totalheight)*100;
         progress.style.height=progressheight+"%";
     }
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
-        max: 20,
-            speed: 400,
-            glare:true,
-            "max-glare":0.5
-        });
+    // VanillaTilt.init(document.querySelectorAll(".tilt"), {
+    //     max: 20,
+    //         speed: 400,
+    //         glare:true,
+    //         "max-glare":0.5
+    //     });
+document.querySelectorAll(".tilt").forEach(element => {
+    console.log(element)
+  VanillaTilt.init(element, {
+    max: 40,
+        speed: 400,
+        glare:true,
+        "max-glare":0.5
+    });
+});
 </script>
 </html>

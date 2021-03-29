@@ -24,8 +24,8 @@ body{
     z-index: 11;
 }
 .logo{
-    max-height: 120px;
-    max-width: 120px;
+    max-height: 84px;
+    max-width: 84px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     background: rgba(0, 0, 0, 0.123);
@@ -34,7 +34,7 @@ body{
     transform: skewX(2px);
 }
 .first{
-    height: 85px;
+    height: 70px;
     box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     background: rgba(255,255,255,0.1);
     width: 550px;
@@ -57,7 +57,7 @@ body{
 .first a{
     text-decoration: none;
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 600;
     color: white;
     text-shadow: 1px 1px 5px #0B111F;
     transition: 0.3s;
@@ -67,7 +67,7 @@ body{
     font-size: 22px;
 }
 .second{
-    height: 85px;
+    height: 70px;
     box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     background: rgba(255,255,255,0.1);
     width: 550px;
@@ -90,15 +90,15 @@ body{
 .second div p{
     text-decoration: none;
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 600;
     color: white;
     text-shadow: 1px 1px 5px #0B111F;
     transition: 0.3s;
     margin-left: 15px;
 }
 .search_icon{
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     filter: invert(1);
     cursor: pointer;
     transition: 0.3s;
@@ -781,9 +781,24 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     font-weight: 600;
     cursor: pointer;
     transition: ease-in-out 0.3s;
+    margin-bottom: 50px;
 }
 #ultimate_game_page:hover{
     background-color: rgb(255, 115, 0);
+}
+#logout_on{
+    position: fixed;
+    /* margin-top: 50px; */
+    color: white;
+    cursor: pointer;
+    bottom: 50px;
+    left: 60px;
+}
+.logout img{
+    filter: hue-rotate(36deg);
+    height: 65px;
+    width: 65px;
+    animation: ease-in-out 6s hue-rotate infinite;
 }
 /* animations--------------------------------- */
 @keyframes serch_box{
@@ -808,6 +823,14 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
         left: 50%;
         opacity: 1;
         width: 78%;
+    }
+}
+@keyframes hue-rotate{
+    0%,100%{
+        filter:hue-rotate(0deg);
+    }
+    50%{
+        filter:hue-rotate(360deg);
     }
 }
 @media only screen and (max-width:850px){
@@ -887,6 +910,14 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     }
     .search_res_game h3 {
         font-size: 18px;
+    }
+    #logout_on {
+        bottom: 39px;
+        left: 52px;
+    }
+    .logout img {
+        height: 43px;
+        width: 43px;
     }
 }
 @media only screen and (max-width:560px){
