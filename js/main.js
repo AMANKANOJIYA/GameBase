@@ -18,7 +18,7 @@ VanillaTilt.init(document.querySelector("#auth_user .background_gamefill #addgam
 // signout system----------------------------------------------
 function logout_l(){
     firebase.auth().signOut().then(() => {
-    window.location.assign("http://127.0.0.1:5500/login.html")
+    window.location.assign("login.html")
     }).catch((error) => {
     console.log(error)
 })}
@@ -31,29 +31,46 @@ firebase.auth().onAuthStateChanged(function(user) {
         if (user.email==email){
           const div_game=document.getElementById("auth_user");
           div_game.style.display="block"
-                const template=document.getElementById("addgame");
-                let element=`
-                <h2 class="auth_title" id="title_auth_l">create<span style="color:#FE8B04 ;"> account</span></h2>
-                <form action="" method="post" class="form" id="login_form">
-                    <input type="text" id="addgame_name" placeholder="Name" autocomplete="off" class="input">
-                    <input type="url" id="addgame_link" placeholder="Game Link" autocomplete="off" class="input">
-                    <input type="url" id="addgame_imagelink" placeholder="Game Image Link" autocomplete="off" class="input">
-                    <textarea type="text" id="addgame_description" placeholder="Game Description" cols="30" rows="10" autocomplete="off" class="input"></textarea>
-                </form>
-                <div class="button_auth">
-                    <div class="button" id="addgame" style="cursor:pointer;" onclick="addGame()">ADD Game</div>
-                </div>
-                </div>`
-                template.innerHTML=element;
+          const template=document.getElementById("addgame");
+          let element=`
+          <h2 class="auth_title" id="title_auth_l">create<span style="color:#FE8B04 ;"> account</span></h2>
+          <form action="" method="post" class="form" id="login_form">
+              <input type="text" id="addgame_name" placeholder="Name" autocomplete="off" class="input">
+              <input type="url" id="addgame_link" placeholder="Game Link" autocomplete="off" class="input">
+              <input type="url" id="addgame_imagelink" placeholder="Game Image Link" autocomplete="off" class="input">
+              <textarea type="text" id="addgame_description" placeholder="Game Description" cols="30" rows="10" autocomplete="off" class="input"></textarea>
+          </form>
+          <div class="button_auth">
+              <div class="button" id="addgame" style="cursor:pointer;" onclick="addGame()">ADD Game</div>
+          </div>
+          </div>`
+          template.innerHTML=element;
+          edit_del(user.email,email);
         }
       })
     } else {
       // No user is signed in.
-      window.location.assign("http://127.0.0.1:5500/login.html")
+      window.location.assign("login.html")
     }
   });
 // --------------------data from data base ----------------------------------
-
+function edit_del(x,y) {
+  if (x==y){
+    var firebaseref=firebase.database().ref("GameBase");
+  firebaseref.on("value",(snapshot)=>{
+    let data=snapshot.val();
+    for (let i in data){
+        let element=`<img src="photos/edit.png" alt=""  class="image_edit ${i}" onclick="edit(this.id)" id="only_admin_icon_${i}">
+                      <img src="photos/delete.png" alt="" class="image_edit ${i}"  onclick="delet(this.id)" id="only_admin_icon_${i}">`
+    const main_c=document.getElementById(`admin_edit-${i}`);
+    var div=document.createElement("div");
+    div.innerHTML=element;
+    main_c.appendChild(div);
+    x+=1
+    }
+  })
+  }
+}
 // content creator function
 function content_creator(cont,tag){
   var firebaseref=firebase.database().ref("GameBase");
@@ -70,9 +87,7 @@ function content_creator(cont,tag){
         <div class="game_con unselectebal">
             <div class="game_name unselectebal">
             ${data[i]['Name']}
-            <div class="admin_edit" id="admin_edit">
-                      <img src="photos/edit.png" alt=""  class="image_edit ${i}" onclick="edit(this.id)" id="only_admin_icon_${i}">
-                      <img src="photos/delete.png" alt="" class="image_edit ${i}"  onclick="delet(this.id)" id="only_admin_icon_${i}">
+            <div class="admin_edit" id="admin_edit-${i}">
               </div>
             </div>
             <div class="game_info unselectebal">
@@ -155,7 +170,7 @@ play_now.forEach(element => {
   element.addEventListener("click",()=>{
     let link=element.href.split("?")[1].split("=")[1];
     firebase.database().ref("GameBase/"+link).on("value",function (snapshot){
-      let view_s=snapshot.val().Views+1
+      let view_s=parseInt( snapshot.val().Views)
      firebase.database().ref("GameBase/"+link).update({
        Views:view_s+1
    });

@@ -346,6 +346,7 @@ body{
     justify-content: space-around;
     align-items: center;
     border-top: white 2px solid;
+    padding-top: 24px;
 }
 .footer .sec{
     height: 320px;

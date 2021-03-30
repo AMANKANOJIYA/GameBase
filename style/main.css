@@ -1,8 +1,11 @@
+:root{
+    --font-type:sans-serif
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: var(--font-type);
 }
 body{
     display: flex;
@@ -12,6 +15,7 @@ body{
     min-height: 100vh;
     background-color: #0B111F ;
     overflow-x: hidden;
+    /* font-family: sans-serif; */
 }
 .top{
     display: flex;
@@ -122,9 +126,9 @@ body{
     align-items: center;
 }
 .main h1{
-    font-size: 60px;
+    font-size: 68px;
     font-weight: 700;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: stencil,var(--font-type);
     color: white;
 }
 /* search modal================================================== */
@@ -242,7 +246,8 @@ body{
     backdrop-filter: blur( 5.5px );
     -webkit-backdrop-filter: blur( 5.5px );
     position: fixed;
-    top: 180px;
+    /* top: 180px; */
+    top: 25vh;
     right: 0px;
     transition: 0.5s;
     z-index: 10;
@@ -292,6 +297,7 @@ body{
     border-top: white 2px solid;
     flex-wrap: wrap;
     padding: 40px 1px;
+    /* padding-top: 24px; */
 }
 .footer .sec{
     height: 320px;
@@ -322,7 +328,7 @@ body{
     font-size: 16px;
     line-height: 2.1;
     font-weight: 400;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:var(--font-type);
 }
 #sec-2 p{
     color: rgb(188 188 188 / 75%);
@@ -330,7 +336,7 @@ body{
     line-height: 2.1;
     font-weight: 400;
     margin-bottom: 3px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-type);
 }
 #sec-2 h4{
     margin-bottom: 27px;
@@ -340,10 +346,11 @@ body{
     color: white;
     text-transform: uppercase;
     line-height: 2.1;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-type);
 }
 #sec-3{
     width: 250px;
+    margin-left: -35px;
 }
 #sec-3 ul li{
     list-style: none;
@@ -355,7 +362,7 @@ body{
     line-height: 2.1;
     font-weight: 400;
     margin-bottom: 3px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-type);
 }
 #sec-3 h4{
     margin-bottom: 27px;
@@ -365,7 +372,7 @@ body{
     color: white;
     text-transform: uppercase;
     line-height: 2.1;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:var(--font-type);
 }
 #sec-4 p{
     color: rgb(188 188 188 / 75%);
@@ -373,7 +380,7 @@ body{
     line-height: 2.1;
     font-weight: 400;
     margin-bottom: 3px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-type);
 }
 #sec-4 h4{
     margin-bottom: 27px;
@@ -383,7 +390,7 @@ body{
     color: white;
     text-transform: uppercase;
     line-height: 2.1;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-type);
 }
 .copyright_text{
     height: 80px;
@@ -399,7 +406,7 @@ body{
     font-weight: 400;
     margin-bottom: 3px;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-type);
 }
 .copy_text a{
     text-decoration: none;
@@ -441,7 +448,7 @@ body{
 }
 .heading_game_glass{
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-type);
     font-weight: 700;
     font-size: 60px;
     cursor: pointer;
@@ -464,7 +471,7 @@ body{
     display: flex;
     flex-direction: row;
     overflow-y: none;
-    overflow-x: hidden;
+    overflow-x: scroll;
     padding-right: 100px;
 }
 .swiper-wrapper{
@@ -475,10 +482,10 @@ body{
     overflow-x: scroll;
 }
 .card{
-    max-height: 400px;
+    /* max-height: 400px;
     max-width: 350px;
     min-height: 400px;
-    min-width: 350px;
+    min-width: 350px; */
     margin: 10px 20px;  
     display:flex;
     flex-direction: column;
@@ -528,15 +535,15 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 46px;
-    left: -29px;
+    top: 38px;
+    left: -30px;
     transform: rotateZ(-45deg);
     height: 53px;
     width: 200px;
     color: white;
     text-transform: uppercase;
     background: linear-gradient(45deg, #4025fb, #624dff);
-    clip-path: polygon(72% 0, 98% 101%, 0 96%, 25% 0);
+    clip-path: polygon(73% 0, 101% 101%, 0 96%, 25% 0);
 }
 .game_con{
     display: flex;
@@ -580,7 +587,7 @@ body{
     width: 110px;
     font-size: 17px;
     font-weight: 700;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:var(--font-type);
     border-radius: 30px;
     color: white;
     display: flex;
@@ -688,7 +695,7 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     display: flex;
     color: white;
     background-color: #FE8B04;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-type);
     font-size: 20px;
     font-weight: 500;
     align-items: center;
@@ -844,8 +851,9 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
         display: none;
     }
     .logo {
-        max-height: 70px;
-        max-width: 70px;
+        max-height: 60px;
+        max-width: 60px;
+        margin-right: 171px;
     }
     #main_text {
         margin-bottom: 0px;
@@ -862,12 +870,12 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
         width: 30px;
     }
     .heading_game_glass {
-        font-size: 40px;
+        font-size: 32px;
     }
-    .card {
+    /* .card {
         max-height: 200px;
         max-width: 150px;
-    }
+    } */
     .main{
     height: 50vh;
     }
@@ -918,6 +926,48 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     .logout img {
         height: 43px;
         width: 43px;
+    }
+    /* card sturcture------------------------------ */
+    .immage_con img {
+        height: 150px;
+        width: 80%;
+    }
+    .immage_con div {
+        top: 37px;
+        left: -12px;
+        height: 38px;
+        width: 151px;
+        clip-path: polygon(69% 0, 95% 101%, 0 115%, 29% 0);
+    }
+    .card {
+        width: 278px;
+        height: 348px;
+    }
+    .imp_btn a {
+        height: 37px;
+        width: 99px;
+        font-size: 15px;
+    }
+    .game_info {
+        font-size: 15px;
+    }
+    .main_container {
+        padding-right: 0px;
+    }
+    .game_glass {
+        height: 486px;
+    }
+    .border_bottom {
+        height: 4px;
+        margin-top: 34px;
+    }
+    .heading_game_glass:hover + .border_bottom{
+        width: 150px;
+        opacity: 1;
+    }
+    #ultimate_game_page {
+        margin-bottom: 37px;
+        margin-top: 5px;
     }
 }
 @media only screen and (max-width:560px){

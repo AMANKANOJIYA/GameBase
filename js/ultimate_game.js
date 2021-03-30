@@ -40,14 +40,18 @@ function filter_by_tag(tag){
   firebaseref.on("value",(snapshot)=>{
     var data=snapshot.val();
     for (let i in data){
-      let name=document.getElementById(`game-${i}`).parentElement;
-      console.log(data[i]["Tag"].toUpperCase(),tag.toUpperCase())
-      if (data[i]["Tag"].toUpperCase()==tag.toUpperCase()){
+      let name=document.getElementById(`game-${i}`).parentElement.parentElement;
+      if (tag.toUpperCase()=="ALL"){
         name.style.display="";
       }
       else{
-        console.log(name[i])
-        name.style.display="none";
+        if (data[i]["Tag"].toUpperCase()==tag.toUpperCase()){
+          name.style.display="";
+        }
+        else{
+          console.log(name[i])
+          name.style.display="none";
+        }
       }
   }
   })
@@ -70,10 +74,10 @@ function filtergames() {
   for (let i = 0; i < name.length; i++) {
     let specific_name = name[i].getElementsByTagName("div")[0];
     // if matches
-    if (specific_name.innerHTML.toUpperCase().indexOf(filter_value)>-1) {
-      name[i].style.display="";
+    if (specific_name.innerHTML.toUpperCase().indexOf(filter_value)>-1 && name[i].parentElement.parentElement.style.display=="none") {
+      name[i].parentElement.parentElement.style.display="";
     } else {
-      name[i].style.display="none";
+      name[i].parentElement.parentElement.style.display="none";
     }
   }
 }

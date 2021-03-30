@@ -57,13 +57,17 @@ nav{
     -webkit-backdrop-filter: blur( 5.5px );
     transform: skewX(2px);
 }
-@media screen and (max-width:800px){
+/* @media screen and (max-width:800px){
     
-}
+} */
 @media screen and (max-width:850px){
     .logo {
-        max-height: 70px;
-        max-width: 70px;
+        max-height: 60px;
+        max-width: 60px;
+        margin-right: 171px;
+        background: none;
+        backdrop-filter:none;
+        -webkit-backdrop-filter: none;
     }
     .navlinks{
         width: 40%;
