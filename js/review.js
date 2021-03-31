@@ -32,7 +32,6 @@ var firebaseref=firebase.database().ref("GameBase");
   firebaseref.once("value",(snapshot)=>{
     var data=snapshot.val();
     for (let i in data){
-      console.log(i,game_id)
       if(i==game_id){
         game_image.src=data[i]["image_link"]
         game_name.innerText=data[i]["Name"]
@@ -89,6 +88,7 @@ var firebaseref=firebase.database().ref("Comment");
     for (let i in data){
       let x =0
       if (data[i]["game_id"]==game_id && x<6) {
+        console.log(data[i])
         let element=`
         <img src="photos/logo-fullsize.png" alt="" class="user_comment_pic" id="user_comment_pic">
         <div class="content">

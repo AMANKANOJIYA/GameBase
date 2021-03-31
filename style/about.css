@@ -102,5 +102,39 @@ body{
         line-height: 2.1;
         text-align: center;
     }
+    .about h1{
+        font-size: 38px;
+        margin-top: 40px;
+    }
+}
+@media only screen and (max-width:400px){
+    .card-front, .card-back {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .span {
+        width: 120px;
+        margin-top:0px;
+        display: flex;
+        font-size: 14px;
+        font-weight: 800;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        height: 250px;
+    }
+    .itsp{
+        margin-top: 0px;
+        display: flex;
+        font-size: 14px;
+        font-weight: 800;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card:hover span {
+        transform: translateY(82px);
+    }
 }
 

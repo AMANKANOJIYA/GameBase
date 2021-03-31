@@ -3,7 +3,7 @@ const button_login=document.getElementById("login_btn");
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      window.location.assign("http://127.0.0.1:5500/main.html")
+      window.location.assign("main.html")
     } else {
       // No user is signed in.
     }
@@ -43,18 +43,23 @@ function signup (){
           .catch((error) => {
               var errorCode = error.code;
               var errorMessage = error.message;
-              error_gen(errorCode,errorMessage);
+              // error_gen(errorCode,errorMessage);
           });
-          firebase.database().ref('user/'+login_username).set({
+          console.log(login_username,login_email)
+          firebase.database().ref('usered/'+login_username).set({
             email:login_email,
             profile_pic:"../photos/base.png",
             user_name:login_username
           }, (error) => {
             if (error) {
-              error_gen(error.code,error.message)
+              // error_gen(error.code,error.message)
+              // console.log(login_username,login_email,error)
+              console.log("it ------------------------")
             } else {
               // Data saved successfully!
-              console.log("it wirks4")
+              // console.log("it wirks4")
+              // console.log(login_username,login_email)
+              console.log("it works")
             }
           });
         login_username=""

@@ -280,23 +280,28 @@ body::after{
     margin-top: 30px;
 }
 .game{
-    height: 130px;
-    width: 130px;
-    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    height: 176px;
+    width: 140px;
+    box-shadow: 20px 20px 50px rgb(0 0 0 / 50%);
     border-radius: 10px;
     background: rgba(255,255,255,0.15);
-    border-top:1px solid rgba(255,255,255,0.5);
-    border-left:1px solid rgba(255,255,255,0.5);
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
     backdrop-filter: blur(5px);
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    /* justify-content: center; */
     align-items: center;
 }
-.game img{
+
+.game .img{
     height: 120px;
     width: 120px;
 }
 .game_name{
+    left: 0px;
     position: absolute;
     height: 0%;
     width: 100%;
@@ -310,15 +315,17 @@ body::after{
     backdrop-filter: blur(5px);
     transition: 0.3s ease-in-out;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
+    padding-left: 4px;
+    padding-right: 4px;
     cursor: pointer;
     text-align: center;
+    opacity: 0;
+    z-index: 1;
 }
 .game:hover .game_name{
-    height: 60%;
-    opacity: 0.7;
+    padding-top: 11px;
+    height: 90%;
+    opacity: 0.8;
 }
 .ult_btn{
     z-index: 2;
@@ -365,6 +372,105 @@ body::after{
     border: 2px white solid;
     border-radius: 13px;
 }
+/* adminonly-------------------------------- */
+.image_edit{
+    height: 25px;
+    width: 25px;
+    -webkit-filter: invert(100%); /* Safari/Chrome */
+    filter: invert(100%);
+    cursor:pointer;
+    transition: 0.3s;
+}
+.admin_only{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    z-index: 2;
+}
+.game:hover .image_edit{
+    filter: invert(0);
+}
+/* edit -------------------------------------------------- */
+.edit{
+    padding: 4% 20px;
+    min-height: 400px;
+    height: 85%;
+    width: 78%;
+    min-width: 400px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transition: 0.4s;
+    transform: translate(-50%,-50%);
+    z-index: 100000000;
+    background: white;
+    animation: edit_box ease-in-out 1.5s;
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+    background: #ffffff7a;
+}
+.edit_in{
+    margin: 2px 2px;
+}
+.cancel_edit{
+    background: white;
+    color: black;
+}
+.edit_btn{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    min-width: 400px;
+}
+.edit_inp{
+    width: 60%;
+    height: 50px;
+}
+#editgame_description{
+    height: 100px;
+}
+#ultimate_game_page{
+    width: 203px;
+    height: 67px;
+    margin-top: 50px;
+    color: white;
+    margin-bottom: 0px;
+    font-variant-caps: small-caps;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    margin-bottom: 50px;
+}
+#ultimate_game_page:hover{
+    background-color: rgb(255, 115, 0);
+}
+.input{
+    width: 80%;
+    height: 40px;
+    color: black;
+    font-size: 20px;
+    margin-top: 10px;
+    padding-left: 20px;
+    border-radius: 8px;
+    border: 2px white solid;
+    background: transparent;
+    font-family: system-ui;
+}
+.input:focus{
+    background-color:white;
+    color: black;
+    border-radius: 8px;
+}
+::placeholder{
+    color:white;
+}
 /* animations--------------------------------- */
 @keyframes animate_scroll{
     0%,100%{
@@ -403,7 +509,7 @@ body::after{
         height: 100px;
         width: 100px;
     }
-    .game img{
+    .game .img{
         height: 90px;
         width: 90px;
     }
@@ -418,7 +524,7 @@ body::after{
         height: 80px;
         width: 80px;
     }
-    .game img{
+    .game .img{
         height: 70px;
         width: 70px;
     }
@@ -428,7 +534,7 @@ body::after{
         height: 71px;
         width: 71px;
     }
-    .game img{
+    .game .img{
         height: 61px;
         width: 61px;
     }
@@ -453,7 +559,7 @@ body::after{
         height: 50px;
         width: 50px;
     }
-    .game img{
+    .game .img{
         height: 40px;
         width: 40px;
     }
