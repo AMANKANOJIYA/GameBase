@@ -981,4 +981,18 @@ box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     .search_res {
         width: 75%;
     }
+    .auth_title{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .form {
+        height: 400px;
+        width: 371px;
+    }
+    .auth {
+        height: 600px;
+        width: 351px;
+    }
+
 }
