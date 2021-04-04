@@ -1,4 +1,3 @@
-
 // --------------fade in animation for main-----------
 let text=document.getElementById("main_text");
 $(document).ready(function(){ 
@@ -38,6 +37,7 @@ firebase.auth().onAuthStateChanged(function(user) {
               <input type="text" id="addgame_name" placeholder="Name" autocomplete="off" class="input">
               <input type="url" id="addgame_link" placeholder="Game Link" autocomplete="off" class="input">
               <input type="url" id="addgame_imagelink" placeholder="Game Image Link" autocomplete="off" class="input">
+              <input type="number" id="addgame_review" placeholder="Review" autocomplete="off" class="input">
               <textarea type="text" id="addgame_description" placeholder="Game Description" cols="30" rows="10" autocomplete="off" class="input"></textarea>
           </form>
           <div class="button_auth">
@@ -146,12 +146,13 @@ function addGame(){
     let name=document.getElementById("addgame_name").value.replace(/<[^>]*>?/gm," ");
     let image_link=document.getElementById("addgame_imagelink").value.replace(/<[^>]*>?/gm," ");
     let desc=document.getElementById("addgame_description").value.replace(/<[^>]*>?/gm," ");
+    let addgame_review=document.getElementById("addgame_review").value.replace(/<[^>]*>?/gm," ");
     var postListRef = firebase.database().ref('GameBase');
     var newPostRef = postListRef.push();
       newPostRef.set({
       Link:link,
       Name:name,
-      Rate:0.0,
+      Rate:addgame_review,
       Tag:"NEW",
       image_link:image_link,
       Views:0,
@@ -165,18 +166,22 @@ function addGame(){
 }
 
 // game _plY CLICK inc views --------------------------------------------------------
-const play_now=document.querySelectorAll(".play_now");
-play_now.forEach(element => {
-  element.addEventListener("click",()=>{
-    let link=element.href.split("?")[1].split("=")[1];
-    firebase.database().ref("GameBase/"+link).on("value",function (snapshot){
-      let view_s=parseInt( snapshot.val().Views)
-     firebase.database().ref("GameBase/"+link).update({
-       Views:view_s+1
-   });
-   });
-  })
-});
+  const play_now=document.querySelectorAll(".play_now");
+  console.log(play_now)
+  play_now.forEach(element => {
+    console.log(element)
+    element.addEventListener("click",()=>{
+      let link=element.href.split("?")[1].split("=")[1];
+      console.log(link)
+      firebase.database().ref("GameBase/"+link).on("value",function (snapshot){
+        let view_s=parseInt( snapshot.val().Views)
+        console.log(view_s)
+       firebase.database().ref("GameBase/"+link).update({
+         Views:view_s+1
+     });
+     });
+    })
+  });
 // game delete function--------------------------------------------
 function delet(id){
       let del_elem=document.getElementById(id);

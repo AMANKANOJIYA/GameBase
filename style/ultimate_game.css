@@ -192,6 +192,7 @@ body::after{
     margin-left: 10px;
 }
 .copyright_text{
+    z-index: 2;
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -348,7 +349,6 @@ body::after{
     padding: 40px 40px;
     margin-top: 80px;
     width: 40%;
-
 }
 .search_text_inp {
     border: 2px #ffffff solid;
@@ -504,6 +504,7 @@ body::after{
         width: 78%;
     }
 }
+
 @media only screen and (max-width:1400px){
     .game{
         height: 100px;
@@ -513,10 +514,16 @@ body::after{
         height: 90px;
         width: 90px;
     }
+    .search_games{
+        width: 59%;
+    }
 }
 @media only screen and (max-width:950px){
     .game_section{
         grid-template-columns: repeat(6,1fr);
+    }
+    .search_games{
+        width: 70%;
     }
 }
 @media only screen and (max-width:750px){
@@ -640,5 +647,30 @@ body::after{
     }
     .search_res {
         width: 75%;
+    }
+    #scrollpath {
+        width: 11px;
+    }
+    #progressbar {
+        width: 11px;
+    }
+    .search_games {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .category {
+        height: 43px;}
+    
+    .search_text_inp {
+        margin-bottom: 15px;
+    }
+    .search_icon_inp {
+        min-height: 0px;
+        min-width: 0px;
+        position: relative;
+        height: 25px;
+        width: 25px;
+        top: 35px;
+        right: -43%;
     }
 }

@@ -199,7 +199,7 @@ body{
     display: flex;
     height: 169px;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     width: 40%;
@@ -633,5 +633,11 @@ body{
     }
     .search_res {
         width: 75%;
+    }
+    #scrollpath {
+        width: 11px;
+    }
+    #progressbar {
+        width: 11px;
     }
 }
