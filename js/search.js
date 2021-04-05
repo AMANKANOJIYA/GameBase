@@ -23,8 +23,9 @@ firebaseref.on("value",(snapshot)=>{
   for (let i in data){
     let element=`<img src="${data[i]['image_link']}" alt="">
     <h3>${data[i]['Name']}</h3>`
-    var div=document.createElement("div");
+    var div=document.createElement("a");
     div.innerHTML=element;
+    div.href=`game_page.html?game_id=${i}`
     div.className="search_res_game"
     div.id=`search_res_game-${i}`
     main_c.appendChild(div);

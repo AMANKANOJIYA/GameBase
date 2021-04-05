@@ -1,3 +1,4 @@
+@import url("STENCIL.TTF");
 :root{
     --font-type:sans-serif
 }
@@ -128,7 +129,7 @@ body{
 .main h1{
     font-size: 68px;
     font-weight: 700;
-    font-family: stencil,var(--font-type);
+    font-family: STENCIL,var(--font-type);
     color: white;
 }
 /* search modal================================================== */
@@ -219,6 +220,8 @@ body{
     border-radius: 18px;
     margin-top: 10px;
     box-shadow: 12px 8px 18px rgb(36 36 36 / 43%);
+    text-decoration: none; 
+    color: black;
 }
 .search_res_game img{
     height: 60px;

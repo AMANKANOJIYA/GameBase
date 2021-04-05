@@ -323,6 +323,8 @@ body{
     border-radius: 18px;
     margin-top: 10px;
     box-shadow: 12px 8px 18px rgb(36 36 36 / 43%);
+    text-decoration: none; 
+    color: black;
 }
 .search_res_game img{
     height: 60px;

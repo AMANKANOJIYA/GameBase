@@ -1,3 +1,7 @@
+@font-face {
+    font-family: rogfontnew;
+    src: url("ROGFonts-Regular.otf");
+}
 *{
     margin: 0;
     padding: 0;
@@ -228,6 +232,8 @@ body{
     border-radius: 18px;
     margin-top: 10px;
     box-shadow: 12px 8px 18px rgb(36 36 36 / 43%);
+    text-decoration: none; 
+    color: black;
 }
 .search_res_game img{
     height: 60px;
@@ -317,7 +323,7 @@ body{
     display: flex;
     color: white;
     background-color: #FE8B04;
-    font-family: rog fonts;
+    font-family: rogfontnew;
     font-size: 20px;
     font-weight: 500;
     align-items: center;
@@ -331,13 +337,13 @@ body{
 .main_cont h1{
     color: white;
     font-weight: 700;
-    font-family: rog fonts;
+    font-family: rogfontnew;
     font-size: 40px;
     margin-bottom: 20px;
 }
 .main_cont h1 span{
     font-weight: 700;
-    font-family: rog fonts;
+    font-family: rogfontnew;
     font-size: 40px;
 }
 .main_cont{
@@ -351,15 +357,15 @@ body{
 }
 label{
     font-weight: 500;
-    font-family: rog fonts;
+    font-family: rogfontnew;
     font-size: 20px;
     color: white;
-    font-family: rog fonts;
+    font-family: rogfontnew;
 }
 .form{
     display: flex;
     flex-direction: column;
-    font-family: rog fonts;
+    font-family: rogfontnew;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
@@ -371,7 +377,7 @@ label{
     display: flex;
     color: white;
     background-color: #00c535;
-    font-family: rog fonts;
+    font-family: rogfontnew;
     font-size: 20px;
     font-weight: 500;
     align-items: center;
@@ -389,7 +395,7 @@ label{
     border-radius: 8px;
     border: 2px white solid;
     background: transparent;
-    font-family: rog fonts;
+    font-family: rogfontnew;
 }
 #message{
     height: 100px;
