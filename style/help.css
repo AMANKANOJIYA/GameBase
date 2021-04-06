@@ -384,6 +384,7 @@ label{
     justify-content: center;
     height: 45px;
     width: 130px;
+    cursor: pointer;
 }
 .input{
     width: 70%;

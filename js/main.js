@@ -37,7 +37,7 @@ firebase.auth().onAuthStateChanged(function(user) {
               <input type="text" id="addgame_name" placeholder="Name" autocomplete="off" class="input">
               <input type="url" id="addgame_link" placeholder="Game Link" autocomplete="off" class="input">
               <input type="url" id="addgame_imagelink" placeholder="Game Image Link" autocomplete="off" class="input">
-              <input type="number" id="addgame_review" placeholder="Review" autocomplete="off" class="input">
+              <input type="number" id="addgame_review" placeholder="Rating" autocomplete="off" class="input">
               <textarea type="text" id="addgame_description" placeholder="Game Description" cols="30" rows="10" autocomplete="off" class="input"></textarea>
           </form>
           <div class="button_auth">

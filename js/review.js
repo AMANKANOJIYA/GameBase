@@ -57,25 +57,21 @@ function addcomment(){
     let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     let dateTime = date+' '+time;
-    firebase.database().ref("user").once("value").then(function(element){
+    firebase.database().ref("usered").once("value").then(function(element){
     // comment from element
     let comment=document.getElementById("comment");
     comment=comment.value.replace(/<[^>]*>?/gm," ");
-    console.log(comment)
       let data=element.val()
-      var postListRef = firebase.database().ref('Comment');
-      var newPostRef = postListRef.push();
-      console.log(document.getElementById("comment_user"))
       for (const key in data) {
-        if (data[key]["email"]==email && comment=="") {
-          console.log("this might work")
+        if (data[key]["email"]==email && comment!="") {
+          var postListRef = firebase.database().ref('Comment');
+          var newPostRef = postListRef.push();
           newPostRef.set({
           Time:dateTime,
           Comment:comment,
           game_id:game_id,
           user:data[key]["user_name"]
         });
-        console.log(dateTime,comment,game_id,data[key]["user_name"])
         location.reload();
         }
       }
