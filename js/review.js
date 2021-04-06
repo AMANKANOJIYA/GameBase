@@ -61,12 +61,14 @@ function addcomment(){
     // comment from element
     let comment=document.getElementById("comment");
     comment=comment.value.replace(/<[^>]*>?/gm," ");
+    console.log(comment)
       let data=element.val()
       var postListRef = firebase.database().ref('Comment');
       var newPostRef = postListRef.push();
       console.log(document.getElementById("comment_user"))
       for (const key in data) {
-        if (data[key]["email"]==email) {
+        if (data[key]["email"]==email && comment=="") {
+          console.log("this might work")
           newPostRef.set({
           Time:dateTime,
           Comment:comment,

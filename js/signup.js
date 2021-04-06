@@ -29,10 +29,6 @@ function signup (){
     let login_cpassword=document.getElementById("signup_cPassword").value.replace(/<[^>]*>?/gm," ")
     console.log(login_username,login_password,login_email)
     // =========================================================
-    // var firebaseref=firebase.database().ref("user");
-    // firebaseref.on("value",(snapshot)=>{
-    //   var data=snapshot.val();
-      // for loop to check users
       if (login_password==login_cpassword) {
         firebase.auth().createUserWithEmailAndPassword(login_email, login_password)
           .then((userCredential) => {
@@ -49,16 +45,12 @@ function signup (){
           firebase.database().ref('usered/'+login_username).set({
             email:login_email,
             profile_pic:"../photos/base.png",
-            user_name:login_username
+            user_name:login_username,
+            bio:"I am A Gamer Having lots of stuff to do"
           }, (error) => {
             if (error) {
-              // error_gen(error.code,error.message)
-              // console.log(login_username,login_email,error)
               console.log("it ------------------------")
             } else {
-              // Data saved successfully!
-              // console.log("it wirks4")
-              // console.log(login_username,login_email)
               console.log("it works")
             }
           });

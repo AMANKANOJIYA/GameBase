@@ -21,11 +21,9 @@ let name_user=document.getElementById("name_user")
 // let bio_user=document.getElementById("bio_user")
 var firebaseref=firebase.database().ref("Admin");
 firebaseref.on("value",(snapshot)=>{
-    console.log("this is working")
     var data=snapshot.val();
     console.log(data)
     for (let i in data){
-        console.log("this is working")
         if (data[i]["email"]==user.email){
             console.log(data[i]["data"],user.email)
             user_image.src=data[i]["image"]
