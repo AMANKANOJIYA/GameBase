@@ -2,7 +2,7 @@
 // signout system----------------------------------------------
 function logout_l(){
     firebase.auth().signOut().then(() => {
-    window.location.assign("http://127.0.0.1:5500/login.html")
+    window.location.assign("login.html")
     }).catch((error) => {
     console.log(error)
 })}
@@ -11,7 +11,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
     } else {
       // No user is signed in.
-      window.location.assign("http://127.0.0.1:5500/login.html")
+      window.location.assign("login.html")
     }
   });
 
@@ -24,6 +24,7 @@ firebaseref.on("value",(snapshot)=>{
     var data=snapshot.val();
     console.log(data)
     for (let i in data){
+        console.log(data[i]["email"],user.email)
         if (data[i]["email"]==user.email){
             console.log(data[i]["data"],user.email)
             user_image.src=data[i]["image"]

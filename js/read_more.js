@@ -24,7 +24,7 @@ var game_id = url.searchParams.get("game_id").replace(/<[^>]*>?/gm," ");
     var data=snapshot.val();
     var x=1
     for (let i in data){
-      if (data[i]["game_id"]==game_id) {
+      if (data[i]["game_id"]==game_id && x<6) {
         let main_con=document.getElementById("comments");
         let element=`<div class="comment"  id="comment${x}">
         <img src="photos/logo-fullsize.png" alt="" class="user_comment_pic" id="user_comment_pic${x}">

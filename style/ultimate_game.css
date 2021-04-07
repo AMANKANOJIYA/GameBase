@@ -507,8 +507,8 @@ body::after{
 
 @media only screen and (max-width:1400px){
     .game{
-        height: 100px;
-        width: 100px;
+        height: 134px;
+        width: 108px;
     }
     .game .img{
         height: 90px;
@@ -528,18 +528,22 @@ body::after{
 }
 @media only screen and (max-width:750px){
     .game{
-        height: 80px;
-        width: 80px;
+        height: 106px;
+    width: 77px;
     }
     .game .img{
         height: 70px;
         width: 70px;
     }
+    .image_edit {
+        height: 15px;
+        width: 15px;
+    }
 }
 @media only screen and (max-width:750px){
     .game{
-        height: 71px;
-        width: 71px;
+        height: 106px;
+    width: 77px;
     }
     .game .img{
         height: 61px;
@@ -563,8 +567,8 @@ body::after{
 }
 @media only screen and (max-width:250px){
     .game{
-        height: 50px;
-        width: 50px;
+        height: 81px;
+        width: 55px;
     }
     .game .img{
         height: 40px;
