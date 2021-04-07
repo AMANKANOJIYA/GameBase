@@ -61,7 +61,6 @@ var game_id = url.searchParams.get("game_id").replace(/<[^>]*>?/gm," ");
       let data=element.val()
       var postListRef = firebase.database().ref('Comment');
       var newPostRef = postListRef.push();
-      console.log(document.getElementById("comment_user"))
       for (const key in data) {
         if (data[key]["email"]==email) {
           newPostRef.set({
@@ -70,7 +69,6 @@ var game_id = url.searchParams.get("game_id").replace(/<[^>]*>?/gm," ");
           game_id:game_id,
           user:data[key]["user_name"]
         });
-        console.log(dateTime,comment,game_id,data[key]["user_name"])
         }
       }
     })

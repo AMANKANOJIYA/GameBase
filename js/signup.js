@@ -27,7 +27,6 @@ function signup (){
     let login_email=document.getElementById("signup_email").value.replace(/<[^>]*>?/gm," ")
     let login_password=document.getElementById("signup_password").value.replace(/<[^>]*>?/gm," ")
     let login_cpassword=document.getElementById("signup_cPassword").value.replace(/<[^>]*>?/gm," ")
-    console.log(login_username,login_password,login_email)
     // =========================================================
       if (login_password==login_cpassword) {
         firebase.auth().createUserWithEmailAndPassword(login_email, login_password)
@@ -41,7 +40,6 @@ function signup (){
               var errorMessage = error.message;
               // error_gen(errorCode,errorMessage);
           });
-          console.log(login_username,login_email)
           firebase.database().ref('usered/'+login_username).set({
             email:login_email,
             profile_pic:"../photos/base.png",

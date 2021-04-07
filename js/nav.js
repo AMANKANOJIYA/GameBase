@@ -5,15 +5,12 @@ const navslide = () => {
     const nav = document.querySelector(".navlinks");
     const navlinks = document.querySelectorAll(".navlinks li");
     const clip=document.getElementById("social")
-    console.log(navlinks)
     // toggle nav
     burger.addEventListener("click", () => {
         nav.classList.toggle("nav-active");
         clip.classList.toggle("nav-clip");
         // animate links
         navlinks.forEach((link, index) => {
-            console.log(link)
-            console.log(index)
             if (link.style.animation) {
                 link.style.animation = ""
             }

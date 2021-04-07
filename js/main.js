@@ -167,15 +167,11 @@ function addGame(){
 
 // game _plY CLICK inc views --------------------------------------------------------
   const play_now=document.querySelectorAll(".play_now");
-  console.log(play_now)
   play_now.forEach(element => {
-    console.log(element)
     element.addEventListener("click",()=>{
       let link=element.href.split("?")[1].split("=")[1];
-      console.log(link)
       firebase.database().ref("GameBase/"+link).on("value",function (snapshot){
         let view_s=parseInt( snapshot.val().Views)
-        console.log(view_s)
        firebase.database().ref("GameBase/"+link).update({
          Views:view_s+1
      });
@@ -192,9 +188,7 @@ function delet(id){
 }
 // game Edit function--------------------------------------------
 function edit(id){
-  console.log(id)
   let edit_elem=document.getElementById(id);
-  console.log(edit_elem.classList)
       
       const edit=document.getElementById("edit");
       edit.style.display="flex"

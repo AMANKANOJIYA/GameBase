@@ -22,7 +22,6 @@ let name_user=document.getElementById("name_user")
 var firebaseref=firebase.database().ref("Admin");
 firebaseref.on("value",(snapshot)=>{
     var data=snapshot.val();
-    console.log(data)
     for (let i in data){
         console.log(data[i]["email"],user.email)
         if (data[i]["email"]==user.email){
