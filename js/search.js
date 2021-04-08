@@ -38,19 +38,19 @@ let filter_input=document.getElementById("search_text_inp")
 filter_input.addEventListener("keyup",filtergames);
 
 function filtergames() {
-// get value of input
-let filter_value=document.getElementById("search_text_inp").value.toUpperCase();
-// get names
-let cont=document.getElementById("search_res");
-let name=cont.querySelectorAll(".search_res_game");
-// loop through
-for (let i = 0; i < name.length; i++) {
-  let specific_name = name[i].getElementsByTagName("h3")[0];
-  // if matches
-  if (specific_name.innerHTML.toUpperCase().indexOf(filter_value)>-1) {
-    name[i].style.display="";
-  } else {
-    name[i].style.display="none";
-  }
-}
+    // get value of input
+    let filter_value=document.getElementById("search_text_inp").value.toUpperCase();
+    // get names
+    let cont=document.getElementById("search_res");
+    let name=cont.querySelectorAll(".search_res_game");
+    // loop through
+    for (let i = 0; i < name.length; i++) {
+      let specific_name = name[i].getElementsByTagName("h3")[0];
+      // if matches
+      if (specific_name.innerHTML.toUpperCase().indexOf(filter_value)>-1) {
+        name[i].style.display="";
+      } else {
+        name[i].style.display="none";
+      }
+    }
 }

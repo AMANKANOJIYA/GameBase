@@ -17,7 +17,6 @@ firebase.auth().onAuthStateChanged(function(user) {
       var firebaseref=firebase.database().ref("Admin");
       firebaseref.once("value",(snapshot)=>{
       let email=snapshot.val()["email"]
-      console.log(user.email,email)
       if (user.email==email){
         admin_only(user.email,email)
       }})
@@ -50,10 +49,10 @@ function add_games(){
   var data=snapshot.val();
   for (let i in data){
     let element= `
-    <div class="game tilt ${i}" id="game-${i}">
+    <div class="game tilt ${i} game_name_${i}" id="game-${i}">
     <a href="game_page.html?game_id=${i}" id="game-a-${i}">
     <img class="img" src="${data[i]['image_link']}" alt="">
-    <div class="game_name" id="game_name_id">${data[i]['Name']}</div>
+    <div class="game_name" id="game_name_${i}">${data[i]['Name']}</div>
     </a>
     </div>`
     const main_c=document.getElementById("game_section");
@@ -69,7 +68,8 @@ function filter_by_tag(tag){
   firebaseref.on("value",(snapshot)=>{
     var data=snapshot.val();
     for (let i in data){
-      let name=document.getElementById(`game-${i}`).parentElement.parentElement;
+      let name=document.getElementById(`game_name_${i}`).parentElement.parentElement.parentElement;
+      console.log(data[i]["Tag"].toUpperCase(),tag.toUpperCase())
       if (tag.toUpperCase()=="ALL"){
         name.style.display="";
       }
@@ -101,12 +101,16 @@ function filtergames() {
   let name=document.querySelectorAll(".game");
   // loop through
   for (let i = 0; i < name.length; i++) {
-    let specific_name = name[i].getElementsByTagName("div")[0];
+    let specific_name=document.getElementById(name[i].classList[3])
     // if matches
-    if (specific_name.innerHTML.toUpperCase().indexOf(filter_value)>-1 && name[i].parentElement.parentElement.style.display=="none") {
-      name[i].parentElement.parentElement.style.display="";
-    } else {
-      name[i].parentElement.parentElement.style.display="none";
+    if (specific_name.innerHTML.toUpperCase().indexOf(filter_value)>-1 && name[i].parentElement.style.display=="none") {
+      name[i].parentElement.style.display="";
+      console.log(name[i].parentElement,specific_name.innerHTML.toUpperCase().indexOf(filter_value)>-1)
+    } else if(specific_name.innerHTML.toUpperCase()=="") {
+      name[i].parentElement.style.display="";
+    }
+    else {
+      name[i].parentElement.style.display="none";
     }
   }
 }
